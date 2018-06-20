@@ -31,31 +31,6 @@ une ligne de séparationavec 3 tirets (la balise `<hr/>` en html)
 
 ---
 
-
-
-# les images 
-
-![Image du site GIPHY par ex] (# Markdown
-
-<a name="haut">
-
-# `#`titre de niveau 1
-## `##`titre de niveau 2
-### `###`titre de niveau 3
-#### `####`titre de niveau 4
-##### `#####`titre de niveau 5
-###### `######`titre de niveau 6 
-
-pour que des balises ne soient pas interprétées je les entoure avec deux guillemets inversés (altgr+7)
-
-on ecrit en italique avec des *astérisques* ou des tirets du bas _underscore_ 
-
-en gras on met 2 **asterisque** ou des tiretrs du bas __underscore__ 
-
-on peut combiner les deux gras & italique **asteriques et _underscore_**
-
-le texte barré utilise deux ~~tiltes~~ (alt gr+2)  
-
 # les listes 
 
 1.premier objet de liste ordonnée
@@ -103,14 +78,6 @@ eau | neutre | 0.10E
 Coca | plantes | 2.10E
 Lait | | 1E
 Emoticones | :imp: | quoi?
-
-
-
-
-
-[retour en haut](#haut)
-
-
 
 
 
