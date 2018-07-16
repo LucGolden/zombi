@@ -1,0 +1,45 @@
+body{
+    margin: 0 auto;
+    width: 70%;
+    background-image: url();
+}
+header{
+    width: 100%;
+    height: 100px;
+    background-color:red;
+    color: aliceblue;
+    border: 2px solid white;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: red;
+   
+}
+li{
+    display: inline;
+    padding-right: 7em;
+    padding-left: 7em;
+  
+}
+
+img{
+    width: 50%;
+    height: 150px;
+}
+section{
+    color: red;
+    font-family: fantasy;
+    width: 45%;
+    float: left;
+    padding: 1em;
+}
+#b{
+    padding-top: 9px;
+}
+footer{
+    margin: 0 auto;
+    color: red;
+    padding-right: 6em;
+    display: inline;
+}
