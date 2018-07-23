@@ -10,6 +10,9 @@
     margin: 0px 20px;
     
 }
+ul{
+    float: right;
+}
 .hr{
     height: 5px;
     width: 20px;
@@ -19,7 +22,7 @@
     /* margin-bottom: 15px; */
 }
 a{
-   float: right;
+   
     text-decoration: none;
     color: white; 
     padding-right: 6px;
