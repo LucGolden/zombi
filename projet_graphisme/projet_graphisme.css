@@ -88,10 +88,34 @@ nav a{
     display: inline-block;
     position: relative;
     margin: 10px;
-    left: 66px;
+    left: 144px;
+    bottom: 6px;
+}
+#bar{
+    width: 170px;
+    height: 25px;
+    border: 1px solid #424951;
+   background-color: #aaa; 
+   position: absolute;
+   right: 265px;
+   top: 220px;
+   text-align: center;
+}
+#bar2{
+    width: 30px;
+    height: 27px;
+    background-color: #424951;
+    position: absolute;
+    right: 235px;
+    top: 220px;
+    text-align: center;
+    color: aliceblue;
+}
+a i{
+    font-size: 23px;
 }
 a:hover{
-    background: #08bc05;
+    background: rgb(230, 42, 73);;
     -moz-transition-duration: 1s;
     color: #fff;
     border: 2px solid #fff;
@@ -101,13 +125,14 @@ a:hover{
 /* ------------------------------ */
 main{
     width: 80%;
-    border: 2px solid red;
+    height: 2062px;
+    /* border: 2px solid red; */
     margin: auto;
 }
 #partie1{
     width: 100%;
     height: 450px;
-     border: 2px solid blue;
+     /* border: 2px solid blue; */
 }
 .f_slide{
     width: 100%;
@@ -432,7 +457,7 @@ hr{
     text-align: center;
     color: #fff;
     position: relative;
-    bottom: 2449px;
+    bottom: 2349px;
 }
 #eshop_triangle{
     width: 0;
@@ -441,20 +466,298 @@ hr{
     border-bottom: 12px solid transparent;
     border-left: 20px solid  rgb(230, 42, 73);
     position: relative;
-    bottom: 2474px;
+    bottom: 2374px;
     left: 183px;
 }
 #eshop_gris{
     width: 100%;
-    height: 500px;
-    background-color: #424951;
+    height: 400px;
+    background-color: #5c5c5c;
     position: relative;
     bottom: 1920px;
 }
 
 
 .eshop1{
+   background: url(img/sprites.png) 1px -104px;
+    height: 38px;
+    width: 41px;
+    position: absolute;
+    top: 40px;
+    left: 26px;
+}
+.eshop2{
+    position: absolute;
+    top: 36px;
+    left: 105px;
+    color: aliceblue;
+    font-family: sans-serif;
+}
+.eshop3{
+    background: url(img/sprites.png) 1px -137px;
+    height: 38px;
+    width: 41px;
+    position: absolute;
+    top: 157px;
+    left: 26px;
+}
+.eshop4{
+    position: absolute;
+    top: 157px;
+    left: 105px;
+    color: aliceblue;
+    font-family: sans-serif;
+}
+.eshop5{
+    background: url(img/sprites.png) 1px -173px;
+    height: 38px;
+    width: 41px;
+    position: absolute;
+    top: 270px;
+    left: 26px;
+}
+.eshop6{
+    position: absolute;
+    top: 270px;
+    left: 105px;
+    color: aliceblue;
+    font-family: sans-serif;
+}
+.eshop7{
+    width: 1px;
+    height: 260px;
+    background-color: #aaa;
+    position: absolute;
+    top: 66px;
+    left: 457px;
+}
+
+.eshop8{
+    background: url(img/sprites.png) 1px -205px;
+    height: 38px;
+    width: 41px;
+    position: absolute;
+    top: 40px;
+    left: 500px;
+}
+.eshop9{
+    position: absolute;
+    top: 44px;
+    left: 581px;
+    color: aliceblue;
+    font-family: sans-serif;
+}
+.eshop10{
+    width: 1px;
+    height: 260px;
+    background-color: #aaa;
+    position: absolute;
+    top: 66px;
+    left: 1040px;
+}
+
+.eshop11{
+    background: url(img/sprites.png) 1px -243px;
+    height: 38px;
+    width: 41px;
+    position: absolute;
+    top: 40px;
+    left: 1076px;
+}
+.eshop12{
+    position: absolute;
+    top: 44px;
+    left: 1181px;
+    color: aliceblue;
+    font-family: sans-serif;
+}
+.eshop13{
+     position: absolute;
+    top: 365px;
+    left: 430px;
+    color: rgb(230, 42, 73);
+    font-family: sans-serif;
+    word-spacing: 24px;
+}
+/* ---------------------------- */
+#fond_bas{
+    width: 100%;
+    height: 1110px;
+    background-color: rgb(235, 235, 235);
+   
+   
+}
+#fond_bas h3{
+    text-align: center;
+    text-transform: uppercase;
+}
+.map{
+    width: 15%;
+    height: 350px;
+    /* border: 2px solid red; */
+    position: relative;
+    left: 50px;
+    top: 16px;
+}
+.trait{
+    width: 450px;
+    height: 2px;
+    background-color: #aaa;
+    position: relative;
+    bottom: 15px;
+}
+#capture img{
     width: 100px;
     height: 100px;
-    background-image: url(img/sprites.png);
+    float: left;
+}
+.map_c{
+    float: left;
+}
+.map_c h4{
+    color: #424951;
+    text-transform: uppercase
+}
+.map_c span{
+    position: relative;
+    left: 104px;
+    bottom: 125px;
+    color: #909190;
+}
+.ullia{
+      width: 100%;
+    height: 300px;
+    /* border: 2px solid red; */
+    position: relative;
+    top: 100px;
+}
+ul li{
+    list-style: none;
+    position: relative;
+    top: -120px;
+    right: 41px;
+    word-spacing: 10px;
+    font-family: sans-serif;
+    display: inline-block;
+}
+li a{
+    color: #909190;
+}
+#information{
+     width: 15%;
+    height: 350px;
+    /* border: 2px solid red; */
+    position: relative;
+    left: 627px;
+    bottom: 353px;
+}
+.trait2{
+    width: 400px;
+    height: 2px;
+    background-color: #aaa;
+    position: relative;
+    bottom: 15px;
+    right: 67px;
+}
+
+#qualite{
+    width: 15%;
+    height: 350px;
+    /* border: 2px solid red; */
+    position: relative;
+    left: 1105px;
+    bottom: 723px;
+}
+#qualite img{
+    position: relative;
+    left: 50px;
+    top: 10px;
+}
+#partage{
+    width: 15%;
+    height: 350px;
+    /* border: 2px solid red; */
+    position: relative;
+    left: 1567px;
+    bottom: 1092px;
+    text-align: center;
+}
+
+#partage img{
+    width: 338px;
+    height: 200px;
+    position: relative;
+    right: 30px;
+}
+.p3{
+    width: 338px;
+    height: 117px;
+    background-color: #aaa;
+    position: relative;
+    right: 30px;
+}
+.insc{
+    width: 70%;
+    height: 25px;
+}
+.p4{
+    width: 338px;
+    height: 252px;
+    background-color: #aaa;
+    position: relative;
+    right: 30px;
+}
+.form{
+    width: 90%;
+    height: 30px;
+}
+.button{
+    background: #424951;
+    height: 30px;
+}
+#social i{
+    margin-top: 20px;
+    margin-left: 10px;
+    color: black;
+}
+
+#dernier{
+    width: 80%;
+    height: 200px;
+    margin-left: 50px;
+    position: relative;
+    bottom: 1073px; 
+    color: #909190;
+}
+/* ------------------------------ */
+footer{
+    width: 100%;
+    height: 50px;
+}
+.trait3{
+    width: 95%;
+    height: 2px;
+    background-color: #aaa;
+    position: relative;
+    bottom: 50px;
+    left: 29px;
+}
+.ancre{
+    position: relative;
+    bottom: 72px;
+    left: 50%;
+}
+.t_g{
+    color: #909190;
+    position: relative;
+    bottom: 68px;
+    left: 30px;
+}
+.t_d{
+    /* float: right;
+    margin-top: -68px; */
+    position: relative;
+    left: 69%;
+    bottom: 209%;
+    color: #909190;
 }
