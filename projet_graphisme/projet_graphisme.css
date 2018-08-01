@@ -1,6 +1,7 @@
 body{
     width: 100%;
     margin: 0;
+    font-family: sans-serif;
 }
 header{
     width: 100%;
@@ -32,13 +33,18 @@ header{
     width: 30%;
     float: right;
     /* border: 2px solid red; */
-    height: 200px;
+    height: 178px;
+    margin-right: 188px;
+    margin-top: 10px;
 }
+
+
 .devis{
     width: 50%;
-    height: 60px;
+    height: 48px;
     float: left;
-    /* border: 2px solid blue; */
+   
+    /* border: 2px solid blue; */ 
 }
 .devis p{
     margin-left: 60px;
@@ -47,12 +53,28 @@ header{
 .devis img{
     margin-top: 50px;
 }
+.devis2{
+    width: 50%;
+    height: 48px;
+    /* float: left */
+    position: relative;
+    left:  10px;
+}
+.devis2 p{
+    margin-left: 60px;
+    margin-top: -44px;
+}
+.devis2 img{
+    margin-top: 50px;
+}
 .devis1{
-     width: 48%;
-    height: 60px;
+    width: 48%;
+    height: 0px;
     float: right;
     /* border: 2px solid blue; */
+   
 }
+
 .devis1 p{
     /* margin-left: 15px; */
     margin-top: 11px;
@@ -61,7 +83,7 @@ header{
     position: relative;
     width: 30%;
     height: 50px;
-    left: 100px;
+    left: 111px;
     bottom: 58px;
 }
 #egal{
@@ -76,7 +98,8 @@ header{
 nav{
     width: 100%;
     height: 35px;
-    background-color: #aaa;
+    background-color: rgb(231, 229, 229);
+    border: 1px solid #424951;
 }
 nav a{
     color: #000;
@@ -84,31 +107,37 @@ nav a{
     border-right: 1px solid #909190;
     /* margin: auto; */
     padding:2px 30px;
-    font-family: 'Do Hyeon', sans-serif;
+    
     display: inline-block;
     position: relative;
-    margin: 10px;
-    left: 144px;
+    margin: 8px;
+    left: 137px;
     bottom: 6px;
 }
 #bar{
     width: 170px;
     height: 25px;
     border: 1px solid #424951;
-   background-color: #aaa; 
-   position: absolute;
-   right: 265px;
-   top: 220px;
-   text-align: center;
-}
-#bar2{
-    width: 30px;
-    height: 27px;
-    background-color: #424951;
+    background-color: #aaa; 
     position: absolute;
-    right: 235px;
+    right: 382px;
     top: 220px;
     text-align: center;
+}
+#bar2{
+    width: 37px;
+    height: 30px;
+    background-color: #424951;
+    position: absolute;
+    right: 345px;
+    top: 219px;
+    text-align: center;
+    color: aliceblue;
+}
+#loupe{
+    position: absolute;
+    right: 239px;
+    top: 227px;
     color: aliceblue;
 }
 a i{
@@ -152,59 +181,111 @@ main{
     bottom: 233px;
     background-color: rgb(230, 42, 73);
 }
+.f1{
+    width: 1px;
+    height: 18px;
+    background-color: #fff;
+    transform: rotate(42deg);
+    position: relative;
+    left: 21px;
+    top: 4px;
+}
+.f2{
+   width: 1px;
+    height: 18px;
+    background-color: #fff;
+    transform: rotate(-42deg);
+    position: relative;
+    left: 21px; 
+    bottom: 1px;
+}
 .fleche2{
     width: 45px;
     height: 40px;
     position: relative;
     bottom: 277px;
-    left: 732px;
+    left: 727px;
     background-color: rgb(230, 42, 73);
 }
+.f3{
+    width: 1px;
+    height: 18px;
+    background-color: #fff;
+    transform: rotate(-42deg);
+    position: relative;
+    left: 21px;
+    top: 4px;  
+}
+.f4{
+    width: 1px;
+    height: 18px;
+    background-color: #fff;
+    transform: rotate(42deg);
+    position: relative;
+    left: 21px;
+    bottom: 1px;
+}
 .texte{
-    width: 42%;
+    width: 51%;
     height: 20px;
     color: #fff;
     background: rgba(0, 0, 0, 0.164);
     position: relative;
-    bottom: 128px;
+    bottom: 122px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
+.carre{
+    width: 10px;
+    height: 10px;
+    border: 2px solid #fff;
+    float: right;
+    margin-right: 10px;
+    background-color: #aaa;
+}
+.carre1{
+    width: 10px;
+    height: 10px;
+    border: 2px solid #fff;
+    background-color: #424951;
+    float: right;
+    margin-right: 10px;
+}
 
 .slide1 {
-    width: 40%;
+    width: 28%;
     height: 190px;
-    background-image: url(img/slider2.jpg);
+    background: url(img/slider3.jpg) 0px -210px;
     position: relative;
     left: 915px;
     bottom: 450px;
 }
 .voir_tout{
-    width: 40%;
+    width: 28%;
     height: 24px;
     background-color: rgb(230, 42, 73);
     text-align: center;
     color: #fff;
     position: relative;
-    left: 914px;
+    left: 915px;
     bottom: 466px;
 }
 .slide2{
-    width: 40%;
+    width: 28%;
     height: 190px;
-    background-image: url(img/slider2.jpg);
+    background: url(img/slider2.jpg) 0px -210px;
     position: relative;
     left: 915px;
     bottom: 443px;
 }
 .voir_tout2{
-    width: 40%;
+    width: 28%;
     height: 24px;
     background-color: rgb(230, 42, 73);
     text-align: center;
     color: #fff;
     position: relative;
-    left: 914px;
+    left: 915px;
     bottom: 459px;
 }
 #option{
@@ -306,7 +387,7 @@ hr{
     border-left: 30px solid rgb(230, 42, 73);
     position: relative;
     bottom: 423px;
-    left: 153px;
+    left: 151px;
 }
 /* ---------------- */
 #carreaux{
@@ -381,9 +462,8 @@ hr{
     position: relative;
     transform: rotate(-43deg);
     bottom: 1114px;
-    left:  597px;
+    left:  593px;
 }
-
 #carreaux3{
      width: 20%;
     height: 367px;
@@ -467,19 +547,19 @@ hr{
     border-left: 20px solid  rgb(230, 42, 73);
     position: relative;
     bottom: 2374px;
-    left: 183px;
+    left: 182px;
 }
 #eshop_gris{
     width: 100%;
     height: 400px;
     background-color: #5c5c5c;
     position: relative;
-    bottom: 1920px;
+    bottom: 1917px;
 }
 
 
 .eshop1{
-   background: url(img/sprites.png) 1px -104px;
+    background: url(img/sprites.png) 1px -104px;
     height: 38px;
     width: 41px;
     position: absolute;
@@ -491,7 +571,7 @@ hr{
     top: 36px;
     left: 105px;
     color: aliceblue;
-    font-family: sans-serif;
+    
 }
 .eshop3{
     background: url(img/sprites.png) 1px -137px;
@@ -506,7 +586,6 @@ hr{
     top: 157px;
     left: 105px;
     color: aliceblue;
-    font-family: sans-serif;
 }
 .eshop5{
     background: url(img/sprites.png) 1px -173px;
@@ -521,7 +600,7 @@ hr{
     top: 270px;
     left: 105px;
     color: aliceblue;
-    font-family: sans-serif;
+    
 }
 .eshop7{
     width: 1px;
@@ -545,7 +624,6 @@ hr{
     top: 44px;
     left: 581px;
     color: aliceblue;
-    font-family: sans-serif;
 }
 .eshop10{
     width: 1px;
@@ -569,14 +647,14 @@ hr{
     top: 44px;
     left: 1181px;
     color: aliceblue;
-    font-family: sans-serif;
+    
 }
 .eshop13{
      position: absolute;
     top: 365px;
     left: 430px;
     color: rgb(230, 42, 73);
-    font-family: sans-serif;
+   
     word-spacing: 24px;
 }
 /* ---------------------------- */
@@ -637,7 +715,6 @@ ul li{
     top: -120px;
     right: 41px;
     word-spacing: 10px;
-    font-family: sans-serif;
     display: inline-block;
 }
 li a{
@@ -739,25 +816,25 @@ footer{
     height: 2px;
     background-color: #aaa;
     position: relative;
-    bottom: 50px;
+    bottom: 30px;
     left: 29px;
 }
 .ancre{
     position: relative;
-    bottom: 72px;
+    bottom: 49px;
     left: 50%;
 }
 .t_g{
     color: #909190;
     position: relative;
-    bottom: 68px;
+    bottom: 58px;
     left: 30px;
 }
 .t_d{
     /* float: right;
     margin-top: -68px; */
     position: relative;
-    left: 69%;
-    bottom: 209%;
+    left: 66%;
+    bottom: 192%;
     color: #909190;
 }
