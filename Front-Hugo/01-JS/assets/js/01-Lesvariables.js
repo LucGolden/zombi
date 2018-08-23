@@ -1,4 +1,4 @@
-/ alert('Mon fichier js fonctionne');/ / deuc slash popur un commentaire uniligne/*
+/* alert('Mon fichier js fonctionne');// deuc slash popur un commentaire uniligne/*
 
 ici je peux faire un commentaire sur plusieurs lignes.
 
@@ -12,7 +12,7 @@ Prenom = "Layla";/*-----------------------------------------------------------
 
 ------------------------------------------------------------*/// --typeof, me permet de connaitre le type de ma variable.
 
-console.log(typeof Prenom);// --Déclaration et affzctation d'un nombre.
+console.log(typeof Prenom);// --Déclaration et affectation d'un nombre.
 
 var Age = 40;// connaitre son type
 
@@ -46,19 +46,24 @@ console.log(typeof Age);/*------------------------------------------------------
 
 | fonction.                                                  |
 
-\-----------------------------------------------------------*/// --LEs variables de type FLOAT
+\-----------------------------------------------------------*/
+// --LEs variables de type FLOAT
 
 var uneDecimale = -2.984;
 
 console.log(uneDecimale);
 
-console.log(typeof uneDecimale);// --Les Booléens (VRAI / FAUX)
+console.log(typeof uneDecimale);
+
+// --Les Booléens (VRAI / FAUX)
 
 var unBoolean = false; //true
 
 console.log(unBoolean);
 
-console.log(typeof unBoolean);// -- Les Constantes
+console.log(typeof unBoolean);
+
+// -- Les Constantes
 
 /*
 
@@ -70,11 +75,14 @@ console.log(typeof unBoolean);// -- Les Constantes
 
 *être déclarée à nouvveau...
 
-*/const HOST = "localhost";
+*/
+const HOST = "localhost";
 
 const USER = "root";
 
-const PASSWORD = "mysql";// je ne peux pas faire cela ..
+const PASSWORD = "mysql";
+
+// je ne peux pas faire cela ..
 
 // USER = "Layla";
 
@@ -100,7 +108,8 @@ unNombre = parseInt(unNombre);
 
 console.log(unNombre);
 
-console.log(typeof unNombre);// -- Pour convertir un nombre en string
+console.log(typeof unNombre);
+// -- Pour convertir un nombre en string
 
 unNombre = 10;
 
