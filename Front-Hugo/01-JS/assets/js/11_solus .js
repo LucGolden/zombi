@@ -1,6 +1,3 @@
-// BENCHMARK - BOUCLES JS
-//http://jsbench.github.io/#6bdfcd2692ba80c16a68c88554281570
-
 /*
  I. Créer un Tableau 3D "PremierTrimestre" contenant la moyenne d'un étudiant pour plusieurs matières.
 
@@ -10,10 +7,9 @@
     
     **** Vous allez créez au minimum 5 étudiants ****
 
-II. Afficher sur la page (à l'aide de document.write) pour chaque étudiant, la liste (ul et li) 
+II. Afficher sur la page (à l'aide de document.write) pour chaque étudiant, la liste (ol / ul et li) 
 de sa moyenne à chaque matière, puis sa moyenne générale. 
 */
-
 
 var PremierTrimestre = [
     {
@@ -22,7 +18,8 @@ var PremierTrimestre = [
         moyenne: {
             francais: 4,
             math: 6,
-            physique: 18
+            physique: 18,
+            musique: 14
         }
     },
     {
@@ -70,6 +67,46 @@ var PremierTrimestre = [
     }
 ];
 
+// -- Les Flémards.js  
+w = e => document.write(e);
+l = e => console.log(e);
+
+// -- 1. Je souhaite afficher la liste de mes étudiants.
+w('<ol>');
+for (let i = 0; i < PremierTrimestre.length; i++) {
+
+    // -- Vérification dans la console
+    console.log(PremierTrimestre[i]);
+
+    // -- 2. Afficher les étudiants sur ma page
+    let etudiant = PremierTrimestre[i];
+    w('<li>');
+
+    w(etudiant.prenom + " " + etudiant.nom);
+
+    var nombreDeMatiere = 0, sommeDesNotes = 0;
+
+    // -- 3. Afficher la moyenne obtenu par mon etudiant a chaque matiere
+    w('<ul>');
+    for (let matiere in etudiant.moyenne) {
 
 
-w = a => document.write(a);
+        nombreDeMatiere++;
+        sommeDesNotes += etudiant.moyenne[matiere];
+
+        // -- Affichage sur la page
+        w('<li>');
+        w(matiere + " : " + etudiant.moyenne[matiere]);
+        w('</li>');
+
+    }
+    w('<li>');
+    w('<strong>Moyenne Générale :</strong>' + (sommeDesNotes / nombreDeMatiere).toFixed(2));
+    w('</li>');
+
+    w('</ul>');
+    l('------');
+
+    w('</li><br>');
+}
+w('</ol>');
