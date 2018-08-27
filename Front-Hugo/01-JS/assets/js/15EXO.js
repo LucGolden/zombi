@@ -14,27 +14,11 @@ A l'inverse, si le Pseudo n'existe pas dans le tableau Membre, ou que l'utilisat
 
 ---------*/
 //évènement change 
-var membres = [
-    { 'pseudo': 'Hugo', 'age': 26, 'email': 'wf3@hl-media.fr', 'mdp': 'wf3' },
-    { 'pseudo': 'Rodrigue', 'age': 56, 'email': 'rodrigue@hl-media.fr', 'mdp': 'roro' },
-    { 'pseudo': 'James', 'age': 78, 'email': 'james@hl-media.fr', 'mdp': 'james8862' },
-    { 'pseudo': 'Emilio', 'age': 18, 'email': 'milio@hl-media.fr', 'mdp': 'milioDu62' }
-];
 
-var newpseudo = document.getElementById('pseudo');
-var pseudoError = document.getElementsByClassName('pseudoError');
 
-function pseudoSaisie(){
-    alert(pseudoError);
-} 
-for (i = 0; i < membres.length; i++ ){
-    console.log(membres[i].pseudo);
-    console.log(membres[i]);
 
-    if(newpseudo.value !== membres[i].pseudo){
-       pseudo.addEventListener('change', pseudoSaisie);
-    }
-}
+
+
  
 
 
@@ -50,8 +34,7 @@ Quand l'utilisateur corrige son age, la situation revient à la normal. La notif
 
 ---------*/
 
-document.getElementById('age');
-document.getElementsByClassName('ageError')
+
 
 
 
@@ -85,4 +68,69 @@ var membres = [
     { 'pseudo': 'James', 'age': 78, 'email': 'james@hl-media.fr', 'mdp': 'james8862' },
     { 'pseudo': 'Emilio', 'age': 18, 'email': 'milio@hl-media.fr', 'mdp': 'milioDu62' }
 ];
+
+
+// -- Récupération des différents éléments
+const pseudo            = document.getElementById('pseudo');
+const age               = document.getElementById('age');
+const email             = document.getElementById('email');
+const mdp               = document.getElementById('mdp');
+const submit            = document.getElementById('submit');
+const Dienvenue         = document.getElementById('Bienvenue');
+const Inscription       = document.getElementById('Inscription');
+
+const pseudoError = document.getElementsByClassName('pseudoError');
+const ageError = document.getElementsByClassName('ageError');
+
+//-- Etape 1 & 3
+
+pseudo.addEventListener('input', function (){
+    
+    for( let i = 0; i<membres.length; i++){
+        console.log(membres[i]);
+        if(pseudo.nodeValue === membres[i].pseudo){
+            pseudoError.style.display = "block";
+            submit.disabled = true ;
+            Bienvenue.textContent = '';
+
+            break;
+
+        } else {
+            pseudoError.style.display = "none";
+            submit.disabled = false;
+            Bienvenue.textContent = 'Bienvenue' + pseudo.value;
+        }
+    }
+}
+);
+
+// -- Etape 2
+
+const majoriteLegale = 18;
+age.addEventListener ('change', function(){
+    if(age.value >= majoriteLegale ){
+        ageError.style.display = 'none';
+        submit.disabled = false;
+    } else {
+        ageError.style.display = 'block';
+        submit.disabled = true;
+    }
+});
+
+// Etape 4
+InscriptionForm.addEventListener('submit' , function (e){
+        //Stoper la redirection HTTP
+        e.preventDefault();
+
+    // -- Créer un objet membre à ajouter au tableau
+    const membre = {
+        'pseudo': pseudo.value,
+        'age': Age.value,
+        'email': amail.value,
+        'mdp': mdp.value
+    };
+    membres.push(membre);
+    console.log(membres);
+});
+
 
