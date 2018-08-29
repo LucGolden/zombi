@@ -50,8 +50,17 @@ Quand l'utilisateur corrige son age, la situation revient à la normal. La notif
 
 ---------*/
 
-document.getElementById('age');
-document.getElementsByClassName('ageError')
+var getAge = document.getElementById('age');
+var getError = document.getElementsByClassName('ageError');
+
+if(getAge === membres[i].age){
+
+}else{
+    function ageSaissie(){
+        alert(getError)
+    };
+    pseudo.addEventListener('change', ageSaissie);
+}
 
 
 
