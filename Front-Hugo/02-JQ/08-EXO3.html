@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!-- Encodage pour les accents -->
+    <meta charset="UTF-8">
+
+    <!-- Titre de la Page -->
+    <title>Gestion de mes Contacts</title>
+
+    <!-- Pour Internet Explorer : S'assurer qu'il utilise la dernière version du moteur de rendu -->
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+
+    <!-- Affichage sans zoom pour les mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Styles CSS -->
+    <style>
+        main {
+            margin-bottom: 500px;
+        }
+
+        .contact {
+            background: #EEE;
+            text-align: center;
+            padding: 40px 0;
+            margin: 40px 0;
+        }
+
+        .contact h1 {
+            margin: 0;
+        }
+
+        .alert-contact {
+            display: none;
+        }
+    </style>
+
+    <!-- HTML5 Shiv -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js" integrity="sha256-sqQlcOZwgKkBRRn5WvShSsuopOdq9c3U+StqgPiFhHQ="
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <!---------------------------------------------------/
+        CONSIGNE : 
+        1. Créer un Formulaire HTML permettant le 
+        remplissage d'une Fiche de Contact : Nom, Prénom,
+        Email et le Téléphone.
+        
+        2. Après vérification des informations, vous
+        ajouterez le nouveau contact dans un tableau javascript (array) de 
+        contacts.
+        
+        3. Vous afficherez ensuite l'ensemble des contacts
+        du tableau sur votre page HTML à la suite de votre
+        formulaire. (Vous utiliserez une <table>)
+        
+        4. BONUS : Utilisation de Notification, Local Storage et Bootstrap.
+    \-------------------------------------------------------->
+
+    <main class="container">
+
+        <!-- En-Tête de Présentation -->
+        <header class="row">
+            <div class="contact col-xs-12">
+                <h1>Gestion de mes Contacts</h1>
+            </div>
+        </header>
+
+        <section class="row">
+                    
+            <!-- Début du Formulaire -->
+            <div class="col-sm-6">
+                <form id="contact" class="form-horizontal">
+                    <fieldset>
+
+                        <!-- Nom du Formulaire -->
+                        <legend>Ajouter un Contact</legend>
+
+                        <!-- Nom -->
+                        <div class="form-group">
+                            <label for="nom" class="col-md-4 control-label">Nom</label>
+                            <div class="col-md-8">
+                                <input type="text" name="nom" id="nom" class="form-control" placeholder="Nom">
+
+                            </div>
+                        </div>
+
+                        <!-- Prénom -->
+                        <div class="form-group">
+                            <label for="prenom" class="col-md-4 control-label">Prénom</label>
+                            <div class="col-md-8">
+                                <input type="text" name="prenom" id="prenom" class="form-control" placeholder="Prénom">
+
+
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="email" class="col-md-4 control-label">Email</label>
+                            <div class="col-md-8">
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+
+                            </div>
+                        </div>
+
+                        <!-- Téléphone -->
+                        <div class="form-group">
+                            <label for="tel" class="col-md-4 control-label">Tel</label>
+                            <div class="col-md-8">
+                                <input type="tel" name="tel" id="tel" class="form-control" placeholder="Téléphone">
+
+                               
+                            </div>
+                        </div>
+
+                        <!-- Bouton d'Envoi -->
+                        <div class="form-group">
+                            <div class="col-xs-9 col-xs-offset-3">
+                                <button type="submit" class="btn btn-primary" value="Ajouter le Contact">Ajouter le Contact</button>
+
+                               
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+            <!-- Fin du Formulaire -->
+
+            <!-- Début du Tableau -->
+            <div class="col-sm-6">
+                <div class="alert alert-success alert-contact">
+                    <strong>Félicitation !</strong> Votre contact est ajouté.
+                </div>
+                <table id="LesContacts" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Email</th>
+                            <th>Téléphone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="aucuncontact">
+                            <td colspan="4">Aucun Contact pour le Moment.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Fin du Tableau -->
+        </section>
+    </main>
+<!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script>
+    
+    // -- 1- Initialiser jQuery (DOM READY)
+    $(function() {
+        // -- 2- Déclaration d'un tableau pour stocker les contacts
+        var CollectionDesContacts = [];
+
+        /**
+         * -- 3- FONCTIONS
+         * 1- valider une adresse mail */
+          function validateEmail(email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+        /**
+         * 2- valider un n° de téléphone
+         */
+        var validateTel = tel => {
+            var telReg = new RegExp("(0|\\+33|0033)[1-9][0-9]{8}");
+            return telReg.test(tel);
+        }
+        /**
+         * -- 4- TRAITEMENT DU FORMULAIRE
+         */
+
+        // -- 5- Détecter l'envoi du formulaire (tout le travail de vérification
+        // des champs du formulaire se fait dans une fonction .on('submit'))
+        $('#contact').on('submit', function (e) {
+            // -- 6- stopper la redirection de la page
+            e.preventDefault();
+
+            // -- 7- récupérer les champs pour en vérifier les valeurs
+            let prenom, nom, email, tel;
+            prenom = $('#prenom');
+            nom = $('#nom');
+            email = $('#email');
+            tel = $('#tel');
+
+            // -- 8- création d'une variable de vérification (booléen)
+            let mesInformationsSontValides = true;
+
+            // -- 9- vérification des champs
+            // -- 9.1- le prénom (longueur)
+            if(prenom.val().length === 0){
+                // dans mon IF le champs n'est pas renseigné
+                mesInformationsSontValides = false;
+                // donc mon champs bn'est pas valide
+            }
+
+            // -- 9.2- le nom (longueur)
+             if (nom.val().length === 0) {
+                // dans mon IF le champs n'est pas renseigné
+                mesInformationsSontValides = false;
+                // donc mon champs bn'est pas valide
+            }
+
+            // -- 9.3- le téléphone (fonction)
+            if(!validateTel(tel.val())){
+                // si l'utilisateur à saisi des caractères non conformes
+                // à ce qui est attendu (defini dans la fonction validateTel)
+                // alors la fonction validateTel retourne 'false'
+                mesInformationsSontValides = false;
+            }
+
+            // -- 9.4- le mail (fonction)
+            if(!validateEmail(email.val())){
+                // si l'utilisateur à saisi des caractères non conformes
+                // à ce qui est attendu (defini dans la fonction validateEmail)
+                // alors la fonction validateTel retourne 'false'
+                mesInformationsSontValides = false;
+            }
+            console.log(mesInformationsSontValides);
+
+            // -- 10- si les champs sont tous valides
+            if(mesInformationsSontValides){        
+            // -- 10.1- préparer le contact (objet)
+            let contact = {
+                // indice : la clé  // valeur
+                nom : nom.val(),
+                prenom : prenom.val(),
+                email : email.val(),
+                tel : tel.val()
+            };
+            console.log(contact);
+
+
+            // -- 10.2- vérification si le contact existe déjà (variable + for)
+            let estPresent = false;
+            // --- 10.2.1- Parcourir le tableau des contacts pour chercher
+            // si l'utilisateur existe déjà
+            for(let i = 0; i < CollectionDesContacts.length; i++){
+                if(contact.email === CollectionDesContacts[i].email){
+                    estPresent = true;
+                    break;
+                }
+            }
+
+
+            // -- 10.3- si le contact est absent
+            if(!estPresent){
+                // --10.3.1- ajouter au tableau des contacts
+                CollectionDesContacts.push(contact);
+                // -- 10.3.2- mettre à jour l'affichage du tableau HTML
+                $('.aucuncontact').hide();
+                $(`<tr><td>${contact.nom}</td><td>${contact.prenom}</td><td>${contact.email}</td><td>${contact.tel}</td></tr>`).appendTo($('#LesContacts > tbody'))
+
+                // --10.3.3- réinitialiser le formulaire 
+                $('contact')[0].reset();
+                $('contact').get(0).reset();
+                $('contact').trigger('reset');
+                $('contact .form-control').val('');
+                document.getElementById('contact').reset();
+
+                // -- 10.3.4- afficher un message
+                $('.alert-contact').fadeIn().delay(4000).fadeOut();
+
+            }else{
+                // -- 10.3.5 -alert si le contact est présent
+                alert('ATTENTION ! \nTu es déjà inscrit!')
+                $('#contact').get(0).reset();
+            }
+
+            // -- 10.3.2- mettre à jour l'affichage
+
+
+            }else{
+                // alert l'utilisateur si un champs est mal renseigné
+                alert('attention\nVeuillez renseigner tous les champs.');
+                // \n => retour à la ligne
+            }
+
+
+
+        });  // -- Fin de on.('submit')
+    }); // -- Fin de jQuery Ready
+      
+    </script>
+
+
+
+    
+
+ 
+
+</body>
+
+</html>
