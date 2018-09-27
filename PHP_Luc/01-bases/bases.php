@@ -701,3 +701,117 @@ foreach($contact as $indice => $info){
         echo '<p>'  . '<strong>'. $info .  '</strong>' . '</p>';
     }
 }
+
+
+// ---------------------
+echo '<h2>  Array multidimensionnel </h2>';
+// ---------------------
+// Nous parlons de tableau multidimensionnel quand un tableau est contenu ds un autre tableau.Chaque tableau represente une dimension.
+
+// Création d'un array multidimensionnel :
+$tab_multi = array(
+0 => array(
+    'prenom'    => 'Luc',
+    'nom'       => 'Dupont',
+    'telephone' => '0652345896'
+),
+1 => array(
+    'prenom'    => 'Layla',
+    'nom'       => 'Duran',
+    'telephone' => '0613345896'
+),
+2 => array(
+    'prenom'    => 'Arnaud',
+    'nom'       => 'Dulac',
+    
+)
+
+);//Il est possible de choisir le nom des indices ds cet array multidimensionnel.
+
+debug($tab_multi);
+
+// Accéder à la valeur "Julien"ds cet array
+echo $tab_multi[0]['prenom'] . '<hr>';//affiche "Julien". Nous entrons d'abord à l'indice [0] de $tab_multi, pour ensuite aller à l'indice ['prenom'] ds le sous-tableau
+
+// Parcourir le tableau multidimensionnel avec une boucle for :
+// Possible car les indice sont numériques.
+
+for ($i = 0; $i < count($tab_multi); $i++){
+    echo $tab_multi[$i]['prenom'] . '<br>';
+}
+
+echo '<hr>';
+
+// Exercice : afficher les 3 prenoms avec une foreach.
+foreach ($tab_multi as $values ){
+    echo $values['prenom'] . '<br>';
+}
+
+echo '<hr>';
+// Exercice : afficher TOUTES les valeurs de l' array $tab_multi en utilisant foreach.
+foreach ($tab_multi as $values ) {
+    // debug($values);
+    foreach ($values as $key => $sousValues){//$values étant lui  même un array, on le parcourt aussi avec une foreach
+        // debug($sousValues);
+        echo  $key . ' : ' . $sousValues . '<br>';//$sousValues correspond aux valeurs de $values et $key les indices
+    }
+    echo  '---------------------<br> <br>';
+}
+
+// ---------------------
+echo '<h2> Inclusion de fichiers </h2>';
+// ---------------------
+
+echo 'Première inclusion :';
+include 'exemple.inc.php';//Le fichier dont le chemin est spécifié est inclus ici. En cas d'erreur lors de l'inclusion du fichier "include" génère  une erreur de type "warning" et continue l'exécution du script
+
+echo 'Deuxième inclusion :';
+include_once 'exemple.inc.php' ;//Le "once" vérifie si le fichier a déjà été inclus. Si c'est le cas, il ne ré-inclus pas.
+
+echo '<br>';
+echo 'Troisième inclision : ';
+require 'exemple.inc.php';//Le fichier est "requis" donc obligatoir  : en cas d'erreur lors de l'inclusion du fichier require génère une erreur de type "fatal error" et stoppe l'exécution du script
+
+echo 'Quatrième inclision : ';
+require_once 'exemple.inc.php';//Le "once" vérifie si le fichier a déjà été inclus. Si c'est le cas, il ne ré-inclus pas.
+
+//Le ".inc" ds le nom du fichier inclus es indicatif pour préciser aux développeurs qu'il s'agit d'un fichier d'inclusion, et donc pas d'une page à part entière. Ce n'est pas obligatoire mais utile. 
+
+
+// ---------------------
+echo '<h2> Gestion des dates </h2>';
+// ---------------------
+echo date('d/m/Y H:i:s') . '<br>';// date() retourne la date de maintenant selon le format indiqué. d => jour, m => mois, Y => année sur 4 chiffres, y => année sur 2 chiffres, H => heure sur 24h, h => heure sur 12h, i => minutes et s => seconde.
+
+echo date( 'Y-m-d') . '<br>';//On peut changer l'orde des paramètres ainsi que le séparateur
+
+// -----------
+// Le timestamp :
+// Le timestamp est le nbre de secondes écoulées entre une certaine date et le 1er janvier 1970 à 00:00:00. Cette date cerrespond à la créationj du système UNIX. 
+#Ce système est use par de nembreux langages de programation dont le PHP et le JavaScript.
+#--------
+echo time();#retourne l'heure actuelle en timestamp
+ echo '<br>';
+#-------
+#Changer le format d'une date (méthode procédurale) :
+
+    $dateJour = strtotime('27-09-2018');#Transforme la date exprimée en string en timestamp
+
+    echo $dateJour . '<br>';#affiche le timestamp du jour
+
+    #var_dump(strtotime('13-13-2018'));//retourne false car la date fournie n'est pas valide. Cette foncyion permet de valider une date.
+
+    $dateFormat = strftime('%Y-%m-%d', $dateJour); //transforme une date donnée en timestamp selon le format indiqué , ici en année-mois-jour
+    echo $dateFormat . '<br>';
+
+    // $dateactuel = strftime( '%d-%m-%Y',time());
+    // echo $dateactuel;
+
+    #-------
+#Changer le format d'une date (méthode objet) :
+
+    $date = new DateTime('11-04-2017'); //$date est un objet date qui represente le 11-04-2017  *IMP
+    echo $date->format('Y-m-d') . '<br>'; //on peut formater cet objet date en appelant sa méthode de format, ici 'Y-m-d'. affiche '2017-04-11'. 
+
+    $dat = new DateTime(date());
+    echo $dat->format('d-m-Y');
