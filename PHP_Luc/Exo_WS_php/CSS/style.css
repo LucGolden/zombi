@@ -1,0 +1,39 @@
+body{
+  font-family: 'Srisakdi', cursive;
+  background:   #a9f0d1;
+}
+.container{
+    background: url(../img/bg.jpg);
+}
+p{
+    font-family: serif; 
+}
+.mt-4 span{
+    font-family: serif;
+    position: relative;
+    left: 550px;
+    top: 27px;
+}
+h2{
+    background-color: #a0a838;
+}
+ i{
+    color: #6c9986;
+}
+.card img{
+    width: 286px;
+    height: 150px;
+}
+.img img {
+     width: 286px;
+    height: 250px;
+   margin-top: 170px; 
+   margin-bottom: 100px;
+}
+.img p{
+   position: relative;
+   left: 120px;
+   top: 185px;
+   font-size: 12px;
+}
+
