@@ -815,3 +815,31 @@ echo time();#retourne l'heure actuelle en timestamp
 
     $dat = new DateTime(date());
     echo $dat->format('d-m-Y');
+
+
+    // ---------------------
+echo '<h2> Introduction aux objets </h2>';
+// ---------------------
+// Un objet est un autre types de données. Il represente un objet du réel (par exemple : une voiture, un meuble, une personnage, etc ...) auquel on peut associer des caractéristiques appelées propriétés (ou attributs) , ainsi que des fonctions pour faire des actions appelés méthodes.
+
+// Pour créer un objet, il nous faut un "plan de construction" : c'est le rôle de la classe. Nous créons ici une classe pour fabriquer des objets meubles :
+
+class Meuble { // on met une majuscule au nom des classes
+   public $marque = 'ikea'; // $marque est une propriété . public pour dire qu'elle est accessible à l'extérieur de la classe
+   public function prix(){ //prix est une méthode
+    return rand(50, 200); //choisit un entier aléatoirement entre 50 et 200
+
+   }
+}// Cette classe est un plan de construction d'objet meuble qui pourrons utiliser la propiété $marque et la méthode prix()
+
+// puis nous créons une table a partir de cette classe :
+$table = new Meuble(); //new estb mot clé qui permet d'instancier la classe Meuble pour en faire un objet $table. On dit que $table est une instance de Meuble.
+
+debug($table); // affiche le type objet, la classa Meuble dont il vient, et sa propriété $marque
+
+echo 'La marque de ma table est : ' . $table->marque . '<br>'; // pour accéder à la propriété d'un objet, on ecrit l'objet suivi d'une flèvche "->" suivi du nom de la propriété sans le "$".
+
+echo 'le prix de la table est : ' . $table->prix() . '€ <br>'; //Pour accéder à une méthode d'un objet, on écritr l'objet suivi d'une flèche "->" suivi du nom de la méthode avec une paire de ().
+
+// ------------------------------------------------------------FIN DU FICHIER--------------------------------------------------------------//
+

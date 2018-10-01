@@ -7,6 +7,19 @@
 // $_POST est une superglobale donc un array. Il est disponible ds tous les contextes du script , y compris au sein des fonctions.
 
 // syntaxe de $_POST : $_POST = array('name1' => 'valeur input1', 'nameN' => 'valeur inputN');
+echo '<pre>';
+print_r($_POST);
+echo '</pre>';
+
+if(!empty($_POST)){//Si $_POST n'est pas vide, c'est qu'on a reçu des données du formulaire (leformulaire a été soumis)
+echo 'Prénom : ' . $_POST['prenom'] . '<br>';
+echo 'Description : ' . $_POST['description'] . '<br>';//Les indices "prenom" et "description" proviennent des "name" du formulaire HTML
+}
+
+// Pour réinitialiser un formulaire avec le dernier code saisi : on clique ds l'url + "enter"
+// pour répéter laderniere action et donc renvoyer les données du formulaire : F5.
+
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
