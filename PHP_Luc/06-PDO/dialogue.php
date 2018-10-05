@@ -18,7 +18,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=dialogue',
                'root',
                '',
                array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING,
-                     PDO::MYSQL_ATTR_INIT_COMMAND => 'set NAMES utf8') 
+                     PDO::MYSQL_ATTR_INIT_$COMMAND => 'set NAMES utf8') 
 );
 
 print_r($_POST);
