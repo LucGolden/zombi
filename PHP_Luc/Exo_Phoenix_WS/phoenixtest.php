@@ -10,20 +10,21 @@ $pdo = new PDO('mysql:host=localhost;dbname=phoenix',
 
 $contenu = '';
 
-$resultat = $pdo->query("SELECT photo FROM  voyage");
+$resultat = $pdo->query("SELECT * FROM  voyage");
 
 // $infoDeBdd = $resultat->fetch(PDO::FETCH_ASSOC);
 
-// while( $infoDeBdd=$resultat->fetch(PDO::FETCH_ASSOC)){
+// while( $photos=$resultat->fetch(PDO::FETCH_ASSOC)){
     
-//   foreach($photos as $indice => $image)  {
+  
 //     echo '<pre style="background:cyan;">';
     
-//     var_dump($image);
+//     var_dump($photos);
+
 //     echo '</pre>';
    
 //   }
-// }
+// 
 
 // {
 //    
@@ -82,52 +83,20 @@ $resultat = $pdo->query("SELECT photo FROM  voyage");
 
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
+  <div class="carousel-item active">
       <img class="d-block w-100" src=" img/maurice.jpg" alt="First slide">
     </div>
 
 <?php 
 
 while( $infoDeBdd=$resultat->fetch(PDO::FETCH_ASSOC)){
-    echo '<div class="carousel-item ">';
-      echo '<img class="d-block w-100 " src=" ' . $infoDeBdd['photo'] . '" alt="Third slide">';
+  
+    echo '<div class="carousel-item">';
+      echo '<img class="d-block w-100 " src=" ' . $infoDeBdd['photo'] . '" alt="">';
     echo '</div>';
   }
 ?>
-    <!-- <div class="carousel-item">
-      <img class="d-block w-100 " src="img/grece_gregolimano.jpg" alt="Third slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 " src="img/caraibes_martinique_boucaniers.jpg" alt="Third slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 " src="img/maldives_fino.jpg" alt="Third slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 " src="img/maldives_kani.jpg" alt="Third slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 " src="img/maurice.jpg" alt="Third slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 " src="img/maurice_albion.jpg" alt="Third slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 " src="img/sicile_kamarina.jpg" alt="Third slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 " src="img/turkoise.jpg" alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div> -->
+
 
 <div class="row">
 <div class="col-md-8 offset-md-2 mt-5">
@@ -175,39 +144,16 @@ while( $infoDeBdd=$resultat->fetch(PDO::FETCH_ASSOC)){
  <div id="carouselExampleControls" id="carouselElse" class="carousel slide mt-5" data-ride="carousel" >
   <div class="carousel-inner" style="height:20em;">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="img/caraibes.jpg" alt="First slide" style="height:20em;">
+      <img class="d-block w-100" src="img/maurice.jpg" alt="First slide" style="height:20em;">
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="img/caraibes1.jpg" alt="Second slide" style="height:20em;">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 " src="img/maldives.jpg" alt="Third slide" style="height:20em;">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 " src="img/grece_gregolimano.jpg" alt="Third slide" style="height:20em;">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 " src="img/caraibes_martinique_boucaniers.jpg" alt="Third slide" style="height:20em;">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 " src="img/maldives_fino.jpg" alt="Third slide" style="height:20em;">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 " src="img/maldives_kani.jpg" alt="Third slide" style="height:20em;">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 " src="img/maurice.jpg" alt="Third slide" style="height:20em;">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 " src="img/maurice_albion.jpg" alt="Third slide" style="height:20em;">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 " src="img/sicile_kamarina.jpg" alt="Third slide" style="height:20em;">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 " src="img/turkoise.jpg" alt="Third slide" style="height:20em;">
-    </div>
-  </div>
+    <?php
+    while( $photos=$resultat->fetch(PDO::FETCH_ASSOC)){
+    echo '<div class="carousel-item">';
+      echo '<img class="d-block w-100 " src=" ' . $photos['photo'] . '" alt="" style="height:20em>';
+    echo '</div>';
+  }
+?>
+  
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
@@ -220,7 +166,26 @@ while( $infoDeBdd=$resultat->fetch(PDO::FETCH_ASSOC)){
 </div>
 
 
+<!-- card dynamique -->
+<div class="row">
+  <?php
 
+
+  while ($infoDeBdd=$resultat->fetch(PDO::FETCH_ASSOC)){
+var_dump($infoDeBdd['destination']);
+
+echo '<div class="card col-4 mt-4" style="width: 18rem;">';
+   echo '<img class="card-img-top" src=" ' . $infoDeBdd['photo'] . '" alt="Card image cap">';
+    echo '<div class="card-body">';
+     echo '<h5 class="' . $infoDeBdd['destination'] . '"></h5>';
+     echo '<p class="card-text">' . $infoDeBdd['presentation'] . ' </p>';
+   echo '<a href="#" class="btn btn-primary">reserver maintenant !</a>';
+  echo '</div>';
+echo '</div>';
+}
+?>
+</div>
+<!-- fin -->
  <?php } ?> 
 
  <footer class="btn btn-block btn-info mt-5">
