@@ -38,7 +38,7 @@
 
               // menu de l'internaute connecté :
               if (internauteEstConnecte()){
-                    echo '<li><a class="nav-link" href="'. RACINE_SITE .'profil.php">Profile</a></li>';
+                    echo '<li><a class="nav-link" href="'. RACINE_SITE .'profil.php">Profil</a></li>';
 
                     echo '<li><a class="nav-link" href="'. RACINE_SITE .'connexion.php?action=deconnexion">Se déconnecter</a></li>';
               }else{
@@ -52,7 +52,7 @@
 
                     //  menu de l'administrateur :
                     if(internauteEstConnecteEtAdmin()){
-                      echo '<li><a class="nav-link" href="'. RACINE_SITE .'admin/gestion_boutique.php">Gestion de la boutique</a></li>';
+                      echo '<li><a class="nav-link" href="'. RACINE_SITE . 'admin/gestion_boutique.php">Gestion de la boutique</a></li>';
                     }
 
 
