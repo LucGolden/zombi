@@ -12,24 +12,26 @@ $contenu = '';
 
 $resultat = $pdo->query("SELECT * FROM  voyage");
 
-// $infoDeBdd = $resultat->fetch(PDO::FETCH_ASSOC);
 
-// while( $photos=$resultat->fetch(PDO::FETCH_ASSOC)){
-    
-  
-//     echo '<pre style="background:cyan;">';
-    
-//     var_dump($photos);
+  $affichage = '';
+//   while ($infoDeBdd = $resultat->fetch(PDO::FETCH_ASSOC)){
+// // var_dump($infoDeBdd);
 
-//     echo '</pre>';
-   
-//   }
-// 
-
-// {
-//    
+// $affichage .= '<div class="col-4 mt-3" >';
+// $affichage .= '<div class="card border-info" style="width: 18rem;">';
+//    $affichage .= '<img class="card-img-top" src=" ' . $infoDeBdd['photo'] . '" alt="Card image cap" >';
+//     $affichage .= '<div class="card-body">';
+//      $affichage .= '<h4 class="card-title">' . $infoDeBdd['destination'] . '</h4>';
+//      $affichage .= '<p class="card-text">' . $infoDeBdd['presentation'] . ' </p>';
+//    $affichage .= '<a href="?action=reserver&id_voyage='. $infoDeBdd['id_voyage'] .'" class="btn btn-primary">reserver maintenant !</a>';
+//   $affichage .= '</div>';
+// $affichage .= '</div>';
+// $affichage .= '</div>';
 // }
 
+// if (!empty($_GET) &&  $_GET['id_voyage'] == $infoDeBdd['id_voyage']  ){
+//   $affichage .= '';
+// }
 
 
 ?>
@@ -58,7 +60,7 @@ $resultat = $pdo->query("SELECT * FROM  voyage");
     <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light  ">
 
-  <a class="navbar-brand" href="#"><i class="fab fa-phoenix-framework"></i>
+  <a class="navbar-brand" href="phoenixtest.php"><i class="fab fa-phoenix-framework"></i>
     Phoenix</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -66,7 +68,7 @@ $resultat = $pdo->query("SELECT * FROM  voyage");
   <div class="collapse navbar-collapse" id="">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Choisir une destination <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="">Choisir une destination <span class="sr-only">(current)</span></a>
       </li>
      
       <li class="nav-item">
@@ -92,7 +94,7 @@ $resultat = $pdo->query("SELECT * FROM  voyage");
 while( $infoDeBdd=$resultat->fetch(PDO::FETCH_ASSOC)){
   
     echo '<div class="carousel-item">';
-      echo '<img class="d-block w-100 " src=" ' . $infoDeBdd['photo'] . '" alt="">';
+      echo '<img class="d-block w-100 img-fluid" src=" ' . $infoDeBdd['photo'] . '" alt="">';
     echo '</div>';
   }
 ?>
@@ -111,19 +113,19 @@ while( $infoDeBdd=$resultat->fetch(PDO::FETCH_ASSOC)){
 
 <div class="row">
 <div class="col-md-8 offset-md-2 mt-5">
-<a href="?action=choisir" class="border border-info text-info btn btn-block">Choisir mon sejour tout de suite !</a>
+<a href="?action=choisir" class="btn btn-outline-info btn-block">Choisir mon sejour tout de suite !</a>
 </div>
 </div>
- <?php }else{?>
+ <?php }elseif(!empty($_GET) && $_GET['action'] == 'choisir'){?>
 
 <div class="container-fluid">
 
-<div class="row fixed-top bg-info">
+<div class="row bg-info">
 <div class="col-md-8 offset-md-3">
     <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light">
 
-  <a class="navbar-brand" href="#"><i class="fab fa-phoenix-framework"></i>
+  <a class="navbar-brand" href="phoenixtest.php"><i class="fab fa-phoenix-framework "></i>
     Phoenix</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -152,15 +154,15 @@ while( $infoDeBdd=$resultat->fetch(PDO::FETCH_ASSOC)){
 
 <div class="container">
 
- <div id="carouselExampleControls" id="carouselElse" class="carousel slide mt-5" data-ride="carousel" >
+ <div id="carouselExampleControls" id="carouselElse" class="carousel slide mt-3" data-ride="carousel" >
   <div class="carousel-inner" style="height:20em;">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="img/maurice.jpg" alt="First slide" style="height:20em;">
+      <img class="d-block w-100 img-fluid" src="img/maurice.jpg" alt="First slide" >
     </div>
     <?php
     while( $photos=$resultat->fetch(PDO::FETCH_ASSOC)){
     echo '<div class="carousel-item">';
-      echo '<img class="d-block w-100 " src=" ' . $photos['photo'] . '" alt="" style="height:20em>';
+      echo '<img class="d-block w-100 img-fluid" src=" ' . $photos['photo'] . '" alt="" >';
     echo '</div>';
   }
 ?>
@@ -177,36 +179,205 @@ while( $infoDeBdd=$resultat->fetch(PDO::FETCH_ASSOC)){
 </div>
 
 
-<!-- card dynamique -->
-<div class="row">
-  <?php
+<!--------------------- card dynamique ----------------------------------->
+<section>
+<div class="row"> 
+<?php 
 
-
-  while ($infoDeBdd=$resultat->fetch(PDO::FETCH_ASSOC)){
-var_dump($infoDeBdd['destination']);
-
-echo '<div class="card col-4 mt-4" style="width: 18rem;">';
-   echo '<img class="card-img-top" src=" ' . $infoDeBdd['photo'] . '" alt="Card image cap">';
-    echo '<div class="card-body">';
-     echo '<h5 class="' . $infoDeBdd['destination'] . '"></h5>';
-     echo '<p class="card-text">' . $infoDeBdd['presentation'] . ' </p>';
-   echo '<a href="#" class="btn btn-primary">reserver maintenant !</a>';
+  $resultat = $pdo->query("SELECT * FROM  voyage");
+while ($infoDeBdd=$resultat->fetch(PDO::FETCH_ASSOC)){
+  echo '<div class="col-4 mt-3 ">';                   
+  echo '<div class="card border-info" >';
+  echo '<img class="card-img-top " src="' . $infoDeBdd['photo'] . '" alt="Card image cap" style="height: 12rem;">';
+  echo '<div class="card-body">';
+  echo '<h5 class="card-title">' . $infoDeBdd['destination'] . '</h5>';
+  echo '<p class="card-text">' . $infoDeBdd['presentation'] . '</p>';
+  echo '<a href="?action=reserver&idvoyage='. $infoDeBdd['id_voyage'] .'" class="btn btn-primary">reserver maintenant !</a>';
   echo '</div>';
-echo '</div>';
+  echo '</div>';
+  echo '</div>';
 }
-?>
-</div>
-<!-- fin -->
- <?php } ?> 
 
+ //print_r($_GET['idvoyage']);
+
+?>
+</div> 
+</section>
+
+
+<!--------------------------------------- fin ------------------------------>
+ <?php //} elseif(!empty($_GET) &&  $_GET['idvoyage'] == $infoDeBdd['id_voyage'] && $_GET['action'] == 'reserver') { var_dump($infoDeBdd);?>
+ <?php } elseif(!empty($_GET) &&  $_GET['idvoyage'] && $_GET['action'] == 'reserver') { var_dump($_GET);?>
+      
+<div class="container-fluid">
+
+<div class="row bg-info">
+<div class="col-md-8 offset-md-3">
+    <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+
+  <a class="navbar-brand" href="phoenixtest.php"><i class="fab fa-phoenix-framework "></i>
+    Phoenix</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Choisir une destinetion <span class="sr-only">(current)</span></a>
+      </li>
+     
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Payer</a>
+      </li>
+    </ul>
+  </div>
+
+</nav>
+</div>
+    </div>
+
+
+</div>
+
+<!----------------------------      -----------------------------   ------------------------------------------------------>
+<div class="container">
+
+ <div id="carouselExampleControls" id="carouselElse" class="carousel slide mt-3" data-ride="carousel" >
+  <div class="carousel-inner" style="height:20em;">
+    <div class="carousel-item active">
+      <img class="d-block w-100 img-fluid" src="img/maurice.jpg" alt="First slide" >
+    </div>
+    <?php
+    while( $photos=$resultat->fetch(PDO::FETCH_ASSOC)){
+    echo '<div class="carousel-item">';
+      echo '<img class="d-block w-100 img-fluid" src=" ' . $photos['photo'] . '" alt="" >';
+    echo '</div>';
+  }
+?>
+  
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+<!--------------------------------   --------------------------------------   -------------------------------------   ----------------->
+      <?php 
+      $resultat = $pdo->query("SELECT * FROM  voyage WHERE id_voyage = '$_GET[idvoyage]'"); 
+      $infoDeBdd=$resultat->fetch(PDO::FETCH_ASSOC);
+
+      ?>
+
+      <div class="row mt-4">
+
+            <div class="col-md-4">
+
+                <div class="card border-info " style="width: 22rem;">
+
+                    <img class="card-img-top luc" src="<?php echo $infoDeBdd['photo']; ?>" alt="maldives fino" style="height: 12rem;">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title text-center"><?php echo $infoDeBdd['destination']; ?></h5>
+
+                    </div>
+
+                    <div class="card-footer alert-info">
+
+                        <p class="card-text text-info">1 Semaine / personne : <?php echo $infoDeBdd['prix'] . '€'; ?></p>
+
+                    </div>
+
+                </div><!--fin .card -->
+
+            </div>
+
+            <div class="col-md-8">
+
+                    <div class="card border-info " style="width: 100%;">
+
+                        <div class="card-header alert-info">
+
+                             <p class="card-text text-info">Je complète mes informations de reservation<i class="fab fa-phoenix-framework"></i></p>
+
+                        </div>
+
+                        <div class="card-body">
+
+
+
+                        <form action="" method="post">
+
+                            <div class="row mt-2 mb-4">
+
+                                <div class="col">
+
+                                    <input type="text" name="email" id="email" class="form-control" placeholder="Email de confirmation">
+
+                                </div>
+
+                            </div>
+
+                            <div class="row mb-4">
+
+                                <div class="col">
+
+                                    <input type="text" name="nb_semaines" id="nb_semaines" class="form-control" placeholder="Je pars combien de semaine ?">
+
+                                </div>
+
+                                <div class="col">
+
+                                    <input type="text" name="nb_vacanciers" id="nb_vacanciers" class="form-control" placeholder="Nombre de vacanciers">
+
+                                </div>
+
+                            </div>
+
+                            <button type="submit" class="btn btn-info btn-block">Confirmer ma reservation</button>
+
+                        </form>
+
+                    </div>
+
+                </div><!--fin .card -->
+
+            </div><!--fin .col -->
+
+        </div><!--fin .row -->
+<div class="row mt-5">
+<?php  
+  $resultat = $pdo->query("SELECT * FROM  voyage ORDER BY RAND()");
+  
+ while( $photos=$resultat->fetch(PDO::FETCH_ASSOC)){
+       echo '<div class="col-md-2">';
+
+                    echo  '<img class="img-thumbnail" src="'. $photos['photo'] .'" alt="maldives fino" style="height: 10rem;">';
+
+          echo '</div>';
+  }
+?>
+</div>    
+<?php 
+// $resultat = $pdo->query("SELECT * FROM  voyage");
+// $infoDeBdd = $resultat->fetch(PDO::FETCH_ASSOC);
+//
+
+?>
+      
+      <?php } ?>
+</div>
  <footer class="btn btn-block btn-info mt-5">
 <div class="row">
 <div class="col-md-8 offset-md-2">
 <p><i class="fas fa-umbrella-beach"></i><span> Vos vacances de rêve ... </span> <i class="fas fa-sun"></i> <span> Plage ...</span> <i class="fas fa-city"></i> <span>Urbaine ...</span> <i class="fas fa-ship"></i> <span> Croisière ...</span> <i class="fas fa-image"></i> <span> Montagne ...</span> <i class="fas fa-euro-sign"></i> <span> A prix tout doux ... </span> <i class="fas fa-umbrella-beach"></i></p>
 </div>
 </div>
-
-
 
 </footer>
 </div><!-- Fin du container-fluid -->
