@@ -21,7 +21,7 @@
 	4- Ajouter les contacts à la BDD et afficher un message en cas de succès ou en cas d'échec.
 
 */
-print_r($_POST);
+// print_r($_POST);
 $pdo = new PDO('mysql:host=localhost;dbname=contacts', 
                'root',
                '',
@@ -80,7 +80,7 @@ $resultat->bindParam('type_contact', $_POST['type_contact']);
 
 $succes_requete = $resultat->execute();
 
-if($succces_requete){
+if($succes_requete){
 	 $message_erreur .= '<p class="btn-success btn">Le contact a bien été enregistré.</p>';
 }else{
 	$message_erreur .= '<p class="btn-success btn">Erreur lors de l\'enregistrement du contact.</p>';
