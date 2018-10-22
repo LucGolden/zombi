@@ -106,7 +106,7 @@ $message = '' ;
     <select name="year_of_prod" id="year_of_prod">
     <!-- boucle pour afficher les differents dates -->
     <?php   
-            $debut = date('Y') - 20;
+        $debut = date('Y') - 20;
         while($debut <= date('Y')){  
         echo "<option>$debut</option>";
         $debut++;

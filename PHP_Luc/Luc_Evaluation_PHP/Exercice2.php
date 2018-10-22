@@ -15,7 +15,7 @@ function onPartEnVoyage($montant , $devise){
 }
 
 //Affichage de la conversion "EUR", "USD", et quand il y a erreur sur la devise
-echo onPartEnVoyage(20 , 'EUR');
+echo onPartEnVoyage(20.33 , 'EUR');
 echo '<br>';
 echo onPartEnVoyage(20 , 'USD');
 echo '<br>';

@@ -1,0 +1,47 @@
+body{
+    background-image: url(../img/FondSite_1920x1200_8.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+i{
+    font-size: 35px;
+}
+h1{
+    font-size: 150px;
+    background-color: #028fe171; 
+    box-shadow: 0 0 2px 1px #000;
+    border-radius: 10px;
+}
+.luc p{
+    font-size: 50px;
+}
+.luc span{
+    color: rgba(255, 0, 0, 0.719);
+}
+.luc{
+    
+    
+    font-family: 'Lobster', cursive;
+   
+}
+a{
+    color: white;
+}
+#position{
+    position: absolute;
+    top: 10em;
+}
+.btn{
+    font-size: 20px;
+}
+/* .luc:hover{
+    background-color: rgba(255, 0, 0, 0.383);
+    -moz-transition-duration: 2s;
+}
+.luc:hover span{
+    color: #028fe19b;
+    -moz-transition-duration: 2s;
+
+} */
