@@ -53,8 +53,8 @@
 
 <div class="row mt-5">
     <div class="col-lg-6 offset-1  text-white mt-5 luc">
-        <p class="offset-2"><a href="#">Je suis</a></p>
-        <h1>LUC M. JOINVIL</h1>
+        <p class="offset-2">Je suis</p>
+        <h1>LUC M<a href="#">.</a> JOINVIL</h1>
         <p class="offset-2">et c'est le site de mon <span>PORFOLIO</span></p>
     </div>
 </div>
@@ -65,14 +65,17 @@
   
 <!--               -->
   <!-- </section> -->
-<div class="row offset-6">
-    <div class="col-2 ">
-        <p><a class="btn btn-outline-primary btn-block" href="#">Créations</a></p>
+<div class="row">
+    <div class="col-lg-1 offset-6  bgcLien">
+
+   
+       <p><a class="btn btn-outline-primary btn-block mt-3" href="#">Formation</a></p>
+        <p><a class="btn btn-outline-info btn-block" href="#">Créations</a></p>
         <p><a class="btn btn-outline-danger btn-block" href="#">Compétences</a></p>
-        <p><a class="btn btn-outline-success btn-block" href="#">Contact</a></p>
-        <p><a class="btn btn-outline-info btn-block" href="#">Formation</a></p>
         <p><a class="btn btn-outline-warning btn-block" href="#">Luc M. Joinvil</a></p>
+        <p><a class="btn btn-outline-success btn-block" href="#">Contact</a></p>
         <p><a class="btn btn-outline-light btn-block" href="#">Formation</a></p>
+
     </div>
 </div>
   

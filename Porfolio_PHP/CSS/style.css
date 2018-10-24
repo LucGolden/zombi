@@ -1,9 +1,10 @@
 body{
-    background-image: url(../img/FondSite_1920x1200_8.jpg);
-    background-repeat: no-repeat;
+    background-image: url(../img/toronto-1298016_960_720.jpg);
+    /* background-repeat: no-repeat; */
     background-size: cover;
     
 }
+
 
 i{
     font-size: 35px;
@@ -12,19 +13,22 @@ h1{
     font-size: 150px;
     background-color: #028fe171; 
     box-shadow: 0 0 2px 1px #000;
-    border-radius: 10px;
+    border-radius: 30px 0;
 }
 .luc p{
     font-size: 50px;
 }
 .luc span{
     color: rgba(255, 0, 0, 0.719);
+    background-color: #0c197f4f;
+    border-radius: 30px 0;
 }
+.luc span:hover{
+    border-radius: 0 30px;
+}
+
 .luc{
-    
-    
-    font-family: 'Lobster', cursive;
-   
+      font-family: 'Lobster', cursive;
 }
 a{
     color: white;
@@ -36,6 +40,19 @@ a{
 .btn{
     font-size: 20px;
 }
+.bgcLien{
+background-color: #0c197f91;
+box-shadow: 0 0 2px 1px #f9f7fd;
+    border-radius: 20px 0;
+}
+.bgcLien p a:hover{
+    transform: scale(1.5);
+    transition: .5s cubic-bezier(0, 3, .4, 1);
+}
+.bgcLien:hover p a:not(:hover){
+    filter:grayscale(1) blur(5px);
+}
+
 /* .luc:hover{
     background-color: rgba(255, 0, 0, 0.383);
     -moz-transition-duration: 2s;

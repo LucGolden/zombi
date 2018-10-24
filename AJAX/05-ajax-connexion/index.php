@@ -70,7 +70,7 @@
               <button type="submit" class="btn btn-success w-100" name="validation" id="validation" >Valider</button>
             </form>
           </div>
-          <div class="modal-footer">
+          <div class="modal-footer" id="message">
             <p>Bienvenue</p>
           </div>
         </div>
@@ -108,6 +108,17 @@
             xhttp.onreadystatechange = function () {
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
                     console.log(xhttp.responseText);
+                    var reponse = JSON.parse(xhttp.responseText);
+
+                    var cible = document.getElementById('message');
+
+                    cible.innerHTML = reponse.message;
+
+                    if (reponse.validation == 'OK') {
+                      // si la connexion est ok alors on redirige vers une autre page (profil ?)
+                      window.location = 'index.php';
+                    }
+
                 }
             }
             xhttp.send(params);
