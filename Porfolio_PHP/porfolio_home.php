@@ -2,7 +2,10 @@
 
 
 
-
+// if(!empty($_GET) && $_GET['lien'] == 'creation') {
+   
+//   require_once 'inc/creation.inc.php';
+// }
 
 
 
@@ -41,6 +44,7 @@
    
 </head>
 <body>
+    <?php if(empty($_GET)) { ?>
     <div class="contenair-fluid">
 
     <!-- <nav class="navbar ">
@@ -55,7 +59,8 @@
     <div class="col-lg-6 offset-1  text-white mt-5 luc">
         <p class="offset-2">Je suis</p>
         <h1>LUC M<a href="#">.</a> JOINVIL</h1>
-        <p class="offset-2">et c'est le site de mon <span>PORFOLIO</span></p>
+        <p class="junior"><b>développeur intégrateur junoir</b></p>
+        <p class="offset-4">et c'est le site de mon <span>PORFOLIO</span></p>
     </div>
 </div>
 </div>
@@ -69,17 +74,28 @@
     <div class="col-lg-1 offset-6  bgcLien">
 
    
-       <p><a class="btn btn-outline-primary btn-block mt-3" href="#">Formation</a></p>
-        <p><a class="btn btn-outline-info btn-block" href="#">Créations</a></p>
-        <p><a class="btn btn-outline-danger btn-block" href="#">Compétences</a></p>
-        <p><a class="btn btn-outline-warning btn-block" href="#">Luc M. Joinvil</a></p>
-        <p><a class="btn btn-outline-success btn-block" href="#">Contact</a></p>
-        <p><a class="btn btn-outline-light btn-block" href="#">Formation</a></p>
+       <p><a class="btn btn-outline-primary btn-block mt-3" href="?lien=luc">Luc M. Joinvil</a></p>
+        <p><a class="btn btn-outline-danger btn-block" href="?lien=competences">Compétences</a></p>
+        <p><a class="btn btn-outline-info btn-block" href="?lien=creations">Créations</a></p>
+        <p><a class="btn btn-outline-light btn-block" href="?lien=formations">Formations</a></p>
+        <p><a class="btn btn-outline-success btn-block" href="?lien=contact">Contact</a></p>
+        <!-- <p><a class="btn btn-outline-warning btn-block" href="#"></a></p> -->
 
     </div>
 </div>
   
 
 </div>
+<?php   } elseif(!empty($_GET) && $_GET['lien'] == 'creations') {
+    require_once 'inc/creation.inc.php';
+} elseif(!empty($_GET) && $_GET['lien'] == 'competences'){
+     require_once 'inc/competences.inc.php';
+    } elseif(!empty($_GET) && $_GET['lien'] == 'formations'){
+         require_once 'inc.formations.inc.php';
+     } ?>
+
+     <footer>
+         <p class="text-center text-white">&copy Luc M. Joinvil développeur intégrateur junoir</p>
+     </footer>
 </body>
 </html>
