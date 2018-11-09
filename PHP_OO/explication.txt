@@ -1,0 +1,46 @@
+Arborescence : 
+
+        -app/ : la configuration de l'application et autres ressources générales (template, fichiers traduction)
+        -src/ : le code PHP spécifique au projet
+        -vendor/ : Les classes et/ou les bibliothèques extérieurs, la recupération des entités
+        -web/ : le repertoire Web racine (point d'entrée sur le site)
+
+************$µ**********************$******************************$
+Nature des differents fichiers :
+
+    app/
+        config/
+            parameters.php : contient les paramètres de connexion à la BDD
+        Config.php : Ce fichier représente la configuration, il contient nottament l'inclusion des paramètres de la BDD (parameters.php) et le return de la partie 'connect' dans une méthode (getter)
+
+
+    vendor/
+        autoload.php : permet d'inclure les bons fichiers lors d'un "new"
+            le nom du namespace est identique dans le dossier, cela permet à l'autoload de s'orienter correctement à travers l'Arborescence mis en place.
+            Une condition qui permet d'aller ds le repertoire /src/ et une autre vers le repertoire /vendor/ en fonction de ce qui est demandé.
+
+        Controller/
+            Controller.php : Controller général de l'application. Permet d'appler des repository et contient nottament la methode render() qui affiche un rendu à l'ecran, de maniere générique
+        
+        Manager/
+            PDOManager.php : Cette classe represente la connexion à la BDD. Elle contient un objet PDO dans l'une de ses propriétés.
+        
+        Manager/
+            EntityRepository : Contient et peut exécuter toutes les requête SQL sans connaitre le contexte.
+            Cette classe doit rester générique afin que cela soit ré-utilisable.
+        
+        Entity/
+            Employe.php : contient les mêmes propriétés que les champs de la table SQL (avec getters et setters) En PHP , 1 ligne récupérée de la BDD et représente 1 objet avec les propriétés renseignées.
+            Il est donc important que l'ortographe des colonne 
+        
+        
+		Entity/
+			Employe.php : contient les mêmes propriétés que les champs de la table sql (avec getters et setteurs)
+			En php, 1 ligne est récupérée de la BDD et représente 1 objet avec les propriétés renseignées.
+			Il est donc important que l'orthographe des colonnes/champs SQL correspondent au nom des propriétés de l'objet.
+
+		Repository/
+			EmployeRepository.php : Cette classe joue le role de "passerelle" pour l'exécution de requête SQL. Elle contient les besoins de Employe.php (contexte) et demande l'exécution à EntityRepository.php (générique) via un héritage.
+
+	    web/
+		index.php : point d'entrée du site

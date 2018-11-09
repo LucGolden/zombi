@@ -71,13 +71,13 @@
 <!--               -->
   <!-- </section> -->
 <div class="row">
-    <div class="col-lg-1 offset-6  bgcLien">
+    <div class="col-1 offset-6  bgcLien">
 
    
        <p><a class="btn btn-outline-primary btn-block mt-3" href="?lien=luc">Luc M. Joinvil</a></p>
         <p><a class="btn btn-outline-danger btn-block" href="?lien=competences">Compétences</a></p>
         <p><a class="btn btn-outline-info btn-block" href="?lien=creations">Créations</a></p>
-        <p><a class="btn btn-outline-light btn-block" href="?lien=formations">Formations</a></p>
+        <p><a class="btn btn-outline-warning btn-block" href="?lien=formations">Formations</a></p>
         <p><a class="btn btn-outline-success btn-block" href="?lien=contact">Contact</a></p>
         <!-- <p><a class="btn btn-outline-warning btn-block" href="#"></a></p> -->
 
@@ -91,7 +91,11 @@
 } elseif(!empty($_GET) && $_GET['lien'] == 'competences'){
      require_once 'inc/competences.inc.php';
     } elseif(!empty($_GET) && $_GET['lien'] == 'formations'){
-         require_once 'inc.formations.inc.php';
+         require_once 'inc/formations.inc.php';
+     }elseif(!empty($_GET) && $_GET['lien'] == 'contact'){
+         require_once 'inc/contact.inc.php';
+    } elseif(!empty($_GET) && $_GET['lien'] == 'luc'){
+         require_once 'inc/luc.inc.php';
      } ?>
 
      <footer>

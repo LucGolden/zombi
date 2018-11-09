@@ -1,28 +1,11 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=*, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mon site porfolio</title>
 
-    <!-- Lien de bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-
-    <!-- Lien Fontawesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-
-    <!-- Lien CSS perso -->
-    <link rel="stylesheet" href="CSS/Style.css">
-
-    <!-- Lien police -->
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet"> 
-   
-</head>
-<body>
-
-<nav class="navbar navbar-light ">
-  <a class="navbar-brand offset-1 bg-light rounded-circle" href="porfolio_home.php"><i class="fas fa-home"></i></a>
+<nav class="navbar mt-3 effet">
+  <a class="btn navbar-brand ml-5  border-info rounded-circle" href="porfolio_home.php"><i class="fas fa-home"></i></a>
+  <a class="btn border-primary mr-5" href="?lien=luc">Luc M. Joinvil</a>
+  <a class="btn border-danger mr-5" href="?lien=competences">Compétences</a>
+  <a class="btn border-info bg-info mr-5" href="?lien=creations">Créations</a>
+  <a class="btn border-warning mr-5" href="?lien=formations">Formations</a>
+  <a class="btn border-success mr-5" href="?lien=contact">Contact</a>
 </nav>
 
 <div class="container-fluid creations">
@@ -50,5 +33,3 @@
 </div>
 </div>
 
-</body>
-</html>
