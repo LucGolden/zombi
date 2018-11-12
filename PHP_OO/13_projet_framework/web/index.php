@@ -20,7 +20,18 @@ require_once(__DIR__ . '/../vendor/Autoload.php');
 // var_dump($pdom);
 
 // exemple de test3 :
-$er = new Manager\EntityRepository;
+// $er = new Manager\EntityRepository;
 
-$resultat = $er->findAll();
+// $resultat = $er->findAll();
+// var_dump($resultat);
+
+// exemple de test4 :
+$employeR = new Repository\EmployesRepository;
+var_dump($employeR);
+
+$resultat = $employeR->getAllEmploye();
 var_dump($resultat);
+
+// exemple de test5 :
+
+
