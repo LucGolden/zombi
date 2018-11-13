@@ -25,8 +25,8 @@ class EntityRepository{
             catch(Exception $e){
                 die('Probleme de fichier de config xml');
             }
-            return $this->db;
         }
+        return $this->db;
         }
         // -----------------------------
         public function selectAll(){

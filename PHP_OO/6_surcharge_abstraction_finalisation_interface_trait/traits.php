@@ -9,15 +9,12 @@ trait TPanier{
 }
 //------------------------------
 trait TMembre{
-
 	public function affichageMembres(){
-
 		return 'Affichage des membres. <br>';
 	}
 }
 //------------------------------
 class Site{
-
 	use TPanier, TMembre; //utilisation des traits
 }
 //----------------------------------------------------------------------------------

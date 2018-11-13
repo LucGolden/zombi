@@ -1,0 +1,21 @@
+
+-------------
+SYMFONY
+--------
+
+INTRO    : Qu'est-ce que Symfony ?
+ETAPE 1  : Installation du framework Symfony 3.4
+ETAPE 2  : Les Bundles
+ETAPE 3  : Les routes et les controllers
+ETAPE 4  : créer notre BoutiqueBundle
+ETAPE 5  : TWIG
+ETAPE 6  : Assets 
+ETAPE 7  : Nos Entités 
+ETAPE 8  : Doctrine
+ETAPE 9  : Les formulaires
+ETAPE 10 : validations des données
+ETAPE 11 : sécurité et Utilisateurs
+ETAPE 12 : Les services
+ETAPE 13 : Les évènements
+ETAPE 14 : Symfony 4 (Bundless et Flex)
+
