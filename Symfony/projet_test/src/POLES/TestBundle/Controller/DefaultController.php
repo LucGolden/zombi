@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class DefaultController extends Controller
 {
@@ -20,7 +21,7 @@ class DefaultController extends Controller
 
 
 /** 
-* @Route("/bonjour")
+* @Route("/bonjour", name="bonjour")
 *Une route, finalement c'est une Url qui correspond à une méthode
 *
 *
@@ -77,6 +78,37 @@ public function hiAction ($prenom, Request $request) {
     );
     return $this->render("@POLESTest/Test/hi.html.twig", $params);
 }
+
+/**
+* @Route("/redirect") 
+*/
+public function redirectActin() {
+    $url = $this -> get('router') -> generate('bonjour'); // l'argument 'bonjour' étant le nom de la route
+
+    return new RedirectResponse($url);
+}
+
+/**
+* @Route("/redirect2") 
+*/
+public function redirect2Actin() {
+    
+    return $this -> redirectToRoute('bonjour'); // l'argument 'bonjour' étant le nom de la route
+    
+}
+
+/**
+* @Route("/message") 
+*/
+public function messageAction(Request $request){
+    $session = $request -> getSession(); // On recupere le contenu de $_SESSION sous la forme d'un objet session.
+
+    $session -> getFlashBag() -> add('test', 'Voici le message 1');
+    $session -> getFlashBag() -> add('test', 'Voici le message 2');
+
+    return $this -> render("@POLESTest/Test/message.html.twig");
+}
+
 
 
 

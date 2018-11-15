@@ -104,7 +104,10 @@ require_once 'inc/haut.inc.php';
                 <li><?php echo $taille; ?></li>
               
             </ul>
-            <h4>Prix : <?php echo number_format($prix, 2, ',', ' '); ?> €</h4>
+            <h4>Prix : {{ produit.prix number_format($prix, 2, ',', ' '); }} €</h4>
+
+
+
 
             <?php  echo $panier; ?>
             <p><a href="boutique.php?categorie=<?php echo $categorie; ?>">Retour vers la catégorie ' <?php echo $categorie; ?> '</a></p>
