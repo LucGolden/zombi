@@ -1,0 +1,13 @@
+Exercice 2 : « Le stagiaire  » 
+ 
+Un stagiaire, dont vous êtes responsable, doit récupérer une liste d’utilisateurs depuis une base de données mais également donner la possibilité d’en ajouter à l’aide d’un formulaire. 
+ 
+Le script principal se compose de deux parties :  - La liste des utilisateurs et leurs informations - Le formulaire d’ajout d’un nouvel utilisateur 
+ 
+Le stagiaire débute dans la programmation PHP. Il n’indente et ne commente pas son code. En tant que maître de stage, vous devez l’aider à corriger et faire fonctionner son code. Une bonne indentation du code est également nécessaire. 
+ 
+Étapes de réalisation : 
+ 
+1. Téléchargez les fichiers à cette adresse : http://wf3.axessweb.io/evaluations/php-sql/evaluation_docs.zip 
+ 2. Déployez les fichiers ​index.php et ​connect.php sur votre serveur local en n’oubliant pas d’importer le script SQL ​users-install.sql. Celui-ci créera une nouvelle base de données contenant une table ​“users”. 
+ 3. Aidez votre stagiaire à débuguer son code, corriger ses erreurs et le faire fonctionner. 

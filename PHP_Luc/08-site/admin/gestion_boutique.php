@@ -12,7 +12,7 @@ require_once '../inc/init.inc.php';
 
 
 //    7-Suppression d'un produit :
-debug($_GET);
+// debug($_GET);
 if (isset($_GET['action']) && $_GET['action'] == 'suppression' && isset($_GET['id_produit'])){ //si exxiste l'indice "action" ds $_GET et que sa valeur est "seppression" et que existe aussi l'indice "id_produit", alors je peux traiter la suppression demandé
 
     $resultat = executeRequete("DELETE FROM produit WHERE id_produit = :id_produit", array(':id_produit' => $_GET['id_produit']));

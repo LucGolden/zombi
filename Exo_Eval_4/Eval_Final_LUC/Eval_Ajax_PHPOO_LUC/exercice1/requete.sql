@@ -1,0 +1,1 @@
+SELECT * FROM users AS u LEFT JOIN articles AS a ON s.id = a.id_users WHERE a.id = 10;

@@ -1,0 +1,9 @@
+Exercice 3 : « Faisons le ménage ! » 
+ 
+Dans cet exercice, vous devrez créer un petit formulaire en Ajax. Vous pouvez utiliser ajax de manière classique ou à l’aide de jQuery. 
+ 
+Le formulaire permettra d’ajouter un nouveau véhicule en base de données et contiendra les champs suivant :  - Marque - Modèle - Année - Couleur 
+ 
+Le traitement du formulaire se fera en ajax. Un message de réussite ou d’erreur s’affichera en fonction de la saisie. 
+ 
+ 

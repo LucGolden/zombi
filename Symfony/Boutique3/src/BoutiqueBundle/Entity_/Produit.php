@@ -1,4 +1,4 @@
-<?php 
+ <?php 
 //Boutique3/src/BoutiqueBundle/Entity/Produit.php
 
 namespace BoutiqueBundle\Entity; 

@@ -1,0 +1,250 @@
+body{
+    font-family: 'Pacifico', cursive;
+    font-family: 'Lobster', cursive;
+    font-family: 'Kaushan Script', cursive;
+    background-image: url(../img/modern_wallpaper_3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+
+#body{
+    
+    /* background-image: url(../img/treste-global-connections.png); */
+    background-repeat: no-repeat;
+    background-color: #36efe693;
+    /* background-color: #2dfbf177; */
+    background-size: cover;
+    /* background-color: #529cba; */
+    width: 98%;
+    height: 60rem;
+    margin-bottom: 50px;
+    
+    border-radius: 2em;
+    
+}
+
+#bodyContact{
+    /* background-image: url(../img/treste-global-connections.jpg); */
+    background-repeat: no-repeat;
+    background-color: #46cf7d71;
+    background-size: cover;
+    width: 80%;
+    height: 45em;
+    
+    
+}
+
+#bodyCompetence{
+    /* background-image: url(../img/fond-ecran-wallpaper-image-abstrait-couleur-08.jpg); */
+    background-repeat: no-repeat;
+    background-color: #0fd2d570;
+    background-size: cover;
+    border-radius: 10px;
+    height: 60rem;
+
+}
+.style{
+    border-radius: 10px;
+    box-shadow: 0 0 10px 10px #000;
+    
+}
+.style:hover{
+    transform: scale(1.1);
+    transition: .5s cubic-bezier(0, 3, .4, 1);
+    
+}
+.stylef{
+    border-radius: 10px;
+    box-shadow: 0 0 50px 5px #000;
+}
+#bodyFormation{
+    /* background-image: url(../img/modern_wallpaper_3.jpg); */
+    background-color: #20387ca4;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+#bodyRealisation{
+    /* background-image: url(../img/sans-titreee.png); */
+    background-color: #28a6728f;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 90%;
+    height: 60rem;
+
+    
+    
+}
+#bodyQui{
+    /* background-image: url(../img/question_marks_3d_shape_112826_1920x1080.jpg); */
+    background-repeat: no-repeat;
+    background-color: #0b19575b;
+    background-size: cover;
+    
+}
+/* .background{
+    
+} */
+
+/* body img{
+    filter: blur(2px);
+    z-index: -1;
+} */
+
+/* i{
+    font-size: 35px;
+} */
+.luc h1{
+    font-size: 10rem;
+    color: rgba(255, 0, 0, 0.842);
+    /* background-color: #028fe15e;  */
+    /* box-shadow: 0 0 10px 5px #000; */
+    /* border-radius: 30px 0; */
+}
+a{
+    font-family: 'Pacifico', cursive;
+    font-family: 'Lobster', cursive;
+    font-family: 'Kaushan Script', cursive; 
+}
+h1{
+    
+    font-family: 'Pacifico', cursive;
+    font-family: 'Lobster', cursive;
+    font-family: 'Kaushan Script', cursive;
+}
+.luc p{
+    font-size: 3.4em;
+}
+.luc span{
+    color: rgb(255, 0, 0);
+    font-size: 1em;
+}
+span{
+    font-size: 25px;
+    font-family: 'Pacifico', cursive;
+    font-family: 'Lobster', cursive;
+    font-family: 'Kaushan Script', cursive;
+    /* color: white; */
+}
+.luc span:hover{
+    border-radius: 0 30px;
+}
+
+.luc{
+    /* font-family: 'Pacifico', cursive;
+    font-family: 'Lobster', cursive;    */
+    font-family: 'Pacifico', cursive;
+    font-family: 'Lobster', cursive;
+    font-family: 'Kaushan Script', cursive;
+}
+
+a{
+    color: white;
+}
+#position{
+    position: absolute;
+    top: 10em;
+}
+.btn{
+    font-size: 20px;
+}
+.bgcLien{
+    /* background-image: linear-gradient(rgba(199, 196, 196, 0.753), #028fe18f); */
+    background-color: #f6f7fbb9;
+    /* background-color: #36efe6; */
+}
+
+.bgcLien p a:hover{
+    transform: scale(1.5);
+    transition: .5s cubic-bezier(0, 3, .4, 1);
+}
+
+.bgcLien:hover p a:not(:hover){
+    filter:grayscale(1) blur(1px);
+}
+
+/* .luc:hover{
+    background-color: rgba(255, 0, 0, 0.383);
+    -moz-transition-duration: 2s;
+}
+.luc:hover span{
+    color: #028fe19b;
+    -moz-transition-duration: 2s;
+
+} */
+
+/* ---------------Créations--------------------- */
+.home{
+    color: rgb(250, 248, 248);
+    font-size: 50px;
+}
+.icon{
+    font-size: 10em;
+}
+
+.creations h1 {
+     font-family: 'Lobster', cursive;
+     color: aliceblue;
+     font-size: 100px;
+}
+
+.effet{
+    position: fixed;
+    z-index: 2;
+}
+
+.effet .btn:hover{
+    transform: scale(1.3);
+    transition: .5s cubic-bezier(0, 3, .4, 1);
+}
+
+/* ----------------- Contacts ------------------ */
+.contact{
+    background-color: #28a7468a;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.contact:hover{
+    background-color: #28a746c2;
+    /* font-size: 20px; */
+    
+}
+
+.contact p:hover{
+    transform: scale(2.3);
+     transition: .5s cubic-bezier(0, 3, .4, 1);
+}
+
+/* -------------Passe temps--------------------- */
+
+.iconL{
+    font-size: 7em;
+    color:white;
+}
+
+
+
+
+/* -------------- Footer ------------------- */
+
+footer span{
+    position: fixed;
+    top: 50em;
+    left: 40%;
+    background-color: #028fe171;
+    font-size: 20px;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+footer i{
+    font-size: 2em;
+}
+
+
+
+/* ---------------------------------------------------------------------------- */
+

@@ -82,7 +82,7 @@
         </div>
         {% for sug in suggestions %}
        <div class="col-sm-3">
-        <a href="{{ path('produit', {'id': sug.id_produit})}} "><img src="{{ asset('/photo/' ~ sug.photo) }}" alt="{{ sug.photo }}" class="img-fluid"></a>
+        <a href="{{ path('produit', {'id': sug.idProduit})}} "><img src="{{ asset('/photo/' ~ sug.photo) }}" alt="{{ sug.photo }}" class="img-fluid"></a>
         <h4>{{ sug.titre }} - {{ sug.prix }} €</h4>
 	   </div>
        {% endfor %}

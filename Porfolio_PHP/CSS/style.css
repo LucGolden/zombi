@@ -1,9 +1,65 @@
 body{
+    
     background-image: url(../img/home-office-336373_960_720.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-color: #529cba; */
+
+    font-family: 'Pacifico', cursive;
+    font-family: 'Lobster', cursive;
+    font-family: 'Kaushan Script', cursive;
+    
+}
+
+#bodyContact{
+    background-image: url(../img/treste-global-connections.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+#bodyCompetence{
+    background-image: url(../img/thumb-1920-316688.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+.style{
+    border-radius: 10px;
+    box-shadow: 0 0 10px 10px #000;
+
+}
+.style:hover{
+     transform: scale(1.1);
+    transition: .5s cubic-bezier(0, 3, .4, 1);
+    
+}
+.stylef{
+    border-radius: 10px;
+    box-shadow: 0 0 10px 10px #000;
+}
+#bodyFormation{
+     background-image: url(../img/sans-titreeeeeee.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+#bodyRealisation{
+    background-image: url(../img/thumb-1920-390071.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     
 }
+#bodyQui{
+    background-image: url(../img/question_marks_3d_shape_112826_1920x1080.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+/* .background{
+    
+} */
 
 /* body img{
     filter: blur(2px);
@@ -14,25 +70,49 @@ body{
     font-size: 35px;
 } */
 .luc h1{
-    font-size: 9.5em;
-    background-color: #028fe136; 
-    box-shadow: 0 0 2px 1px #000;
+    font-size: 10em;
+    color: rgb(255, 0, 0);
+    background-color: rgba(255, 255, 255, 0.103); 
+    box-shadow: 0 0 10px 5px #000;
     border-radius: 30px 0;
 }
+a{
+   font-family: 'Pacifico', cursive;
+    font-family: 'Lobster', cursive;
+    font-family: 'Kaushan Script', cursive; 
+}
+ h1{
+
+     font-family: 'Pacifico', cursive;
+    font-family: 'Lobster', cursive;
+    font-family: 'Kaushan Script', cursive;
+}
 .luc p{
-    font-size: 50px;
+    font-size: 3.4em;
 }
 .luc span{
     color: rgb(255, 0, 0);
+    font-size: 1em;
+}
+span{
+    font-size: 25px;
+     font-family: 'Pacifico', cursive;
+    font-family: 'Lobster', cursive;
+    font-family: 'Kaushan Script', cursive;
+    /* color: white; */
 }
 .luc span:hover{
     border-radius: 0 30px;
 }
 
 .luc{
-      font-family: 'Lobster', cursive;
-      
+    /* font-family: 'Pacifico', cursive;
+    font-family: 'Lobster', cursive;    */
+    font-family: 'Pacifico', cursive;
+    font-family: 'Lobster', cursive;
+    font-family: 'Kaushan Script', cursive;
 }
+
 a{
     color: white;
 }
@@ -43,11 +123,10 @@ a{
 .btn{
     font-size: 20px;
 }
-/* .bgcLien{
-background-color: #0c197f91;
-box-shadow: 0 0 2px 1px #f9f7fd;
-    border-radius: 20px 0;
-} */
+.bgcLien{
+    background-image: linear-gradient(rgb(34, 31, 31), rgba(0, 0, 0, 0));
+}
+
 .bgcLien p a:hover{
     transform: scale(1.5);
     transition: .5s cubic-bezier(0, 3, .4, 1);
@@ -68,10 +147,14 @@ box-shadow: 0 0 2px 1px #f9f7fd;
 } */
 
 /* ---------------Créations--------------------- */
-i{
+.home{
     color: rgb(250, 248, 248);
     font-size: 50px;
 }
+.icon{
+    font-size: 10em;
+}
+
 .creations h1 {
      font-family: 'Lobster', cursive;
      color: aliceblue;
@@ -85,19 +168,51 @@ i{
     transition: .5s cubic-bezier(0, 3, .4, 1);
 }
 
+/* ----------------- Contacts ------------------ */
+.contact{
+    background-color: #28a7468a;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.contact:hover{
+    background-color: #28a746c2;
+    /* font-size: 20px; */
+    
+}
+
+.contact p:hover{
+    transform: scale(2.3);
+     transition: .5s cubic-bezier(0, 3, .4, 1);
+}
+.apropos{
+    background-color: #fb471541;
+}
+.contacts{
+    background-color: #0237667a;
+}
+.formation{
+    background-color: #019ec93a;
+}
 
 
+/* -------------Passe temps--------------------- */
 
-
+.iconL{
+    font-size: 7em;
+    color:white;
+}
 
 
 
 
 /* -------------- Footer ------------------- */
 
-footer{
-    position: relative;
-    top: 6.4em;
+footer span{
+    position: fixed;
+    top: 50em;
+    left: 40%;
     background-color: #028fe171;
     font-size: 20px;
+    border-radius: 5px;
 }
