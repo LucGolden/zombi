@@ -1,6 +1,6 @@
 <hr>
 <div class="row">
-<div class="col-4 mt-4 offset-4 text-white btn bg-dark">
+<div class="col-4 mt-4 offset-4 text-white btn">
     <h2 text-center>Loisirs</h2>
   </div>
   </div>

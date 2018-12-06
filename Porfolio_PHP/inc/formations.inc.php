@@ -11,7 +11,8 @@
 <div class="col-12 mt-5"></div>
   <div class="col-12 mt-5"></div>
 <div class="col-12 mt-5"></div>
-<div class="container stylef formation">
+
+<div class="container stylef formation effetA">
   <div class="row">
     
   </div>
@@ -25,7 +26,7 @@
         <div class="jumbotron jumbotron-fluid rounded">
   <div class="container">
     <h1 class="display-4">Le PoleS</h1>
-    <p class="lead">Développement intégration Web.</p>
+    <p class="lead">Développement intégration Web. <br> Juin-2018 Avril-2019</p>
   </div>
 </div>
     </div>
@@ -40,36 +41,7 @@
 </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-12 mt-5">
-        <div class="jumbotron jumbotron-fluid rounded">
-  <div class="container">
-    <h1 class="display-4">Le PoleS</h1>
-    <p class="lead">Développement intégration Web.</p>
-  </div>
-</div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12 mt-5">
-        <div class="jumbotron jumbotron-fluid rounded">
-  <div class="container">
-    <h1 class="display-4">Le PoleS</h1>
-    <p class="lead">Développement intégration Web.</p>
-  </div>
-</div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12 mt-5">
-        <div class="jumbotron jumbotron-fluid rounded">
-  <div class="container">
-    <h1 class="display-4">Le PoleS</h1>
-    <p class="lead">Développement intégration Web.</p>
-  </div>
-</div>
-    </div>
-  </div>
+ 
 </div>
   
 </body>

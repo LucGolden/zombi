@@ -124,7 +124,7 @@ a{
     font-size: 20px;
 }
 .bgcLien{
-    background-image: linear-gradient(rgb(34, 31, 31), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(rgb(34, 31, 31), rgba(0, 0, 0, 0.39));
 }
 
 .bgcLien p a:hover{
@@ -201,6 +201,12 @@ a{
 .iconL{
     font-size: 7em;
     color:white;
+}
+
+/* massage erreur */
+
+#messageError{
+    background-color: rgba(255, 255, 255, 0.815);
 }
 
 

@@ -8,7 +8,7 @@
   <a class="btn border-success  mr-5" href="?lien=contact">Contacts</a>
 </nav>
 
-<div class="container text-danger mt-5 style">
+<div class="container text-danger mt-5 stylef effetA">
 
 
   <div class="row">

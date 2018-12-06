@@ -14,7 +14,7 @@
 </nav>
 <div class="col-12 mt-5"></div>
 <div class="col-12 mt-5"></div>
-<div class="container stylef p-3 mt-5 apropos">
+<div class="container stylef effetA p-3 mt-5 apropos">
 <div class="row mt-5 ">
     <div class="col-6 img">
         <img src="img/20180811_213503.jpg" alt="lion"  class="img-thumbnail">

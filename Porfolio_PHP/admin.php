@@ -85,7 +85,7 @@
                     </div>
                      <div class="form-group">
    
-                        <textarea type="text" class="form-control mt-3" id="institution" aria-describedby="emailHelp" placeholder="Nom"></textarea>
+                        <textarea type="text" class="form-control mt-3" id="institution" aria-describedby="emailHelp" placeholder="commentaire"></textarea>
     
                     </div>
                         <button type="submit" class="btn btn-primary btn-block">Ajouter</button>
