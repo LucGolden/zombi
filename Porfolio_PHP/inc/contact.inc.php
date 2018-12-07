@@ -3,8 +3,8 @@
     // var_dump($_POST);
 // ma class Contact
 require('Contact.class.php');
-require('DateClass.php');
-$messageError= '';
+
+
   
 if(!empty($_POST)){
     extract($_POST);
@@ -34,12 +34,12 @@ if(!empty($_POST)){
         // on crée un nouvel objet (ou une instance) de la classe Contact.class.php
         $contact = new Contact();
 // on utilise la méthode insertContact de la classe Contact.class.php
-        $contact->insertContact($nom, $prenom, $email, $message, $date);
+        $contact->insertContact($nom, $prenom, $email, $message);
     }
 
 
 
-}
+}//FIN if(!empty($_POST)){
 
 
 
@@ -56,7 +56,7 @@ if(!empty($_POST)){
 <body id="bodyContact">
 
 <nav class="navbar mt-3 contact effet">
-  <a class="btn navbar-brand ml-5  border-success  rounded-circle" href="index.php"><i class="fas fa-home home"></i></a>
+  <a class="btn navbar-brand ml-5  border-success  rounded-circle effetB" href="index.php"><i class="fas fa-home home"></i></a>
   <a class="btn border-warning mr-5" href="?lien=formations">Formations</a>
   <a class="btn border-danger mr-5" href="?lien=competences">Compétences</a>
   <a class="btn border-info mr-5" href="?lien=creations">Réalisations</a>
@@ -103,9 +103,7 @@ if(!empty($_POST)){
                         <textarea type="text" name="message" id="message" class="form-control" placeholder="Message"></textarea>
                     </div>
 
-                                            <div class="form-group">
-                                                <input type="int" name="date" id="date" class="form-control" value="<?php ?>" hidden>
-                                            </div>
+                                           
                     <div class="form-group p-3">
                         <button type="submit" id="submit" name="submit" class="form-control btn btn-success">Envoyer</button>
                     </div>

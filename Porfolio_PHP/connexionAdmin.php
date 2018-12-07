@@ -1,4 +1,45 @@
+<?php  
 
+require 'Connexion.php';
+
+// $info_connexion = new Connexion();
+// $info_connexion->ConnexionAdmin($pseudo, $mdp);
+
+$messageError = '';
+ foreach($_POST as $indice => $valeur) {
+                $_POST[$indice] = htmlspecialchars($valeur, ENT_QUOTES); //pour eviter les injections CSS ET JS
+            }
+
+
+
+$requete = $pdo->query('SELECT * FROM connexion ');
+
+$resultat = $requete->fetch(PDO::FETCH_ASSOC);
+
+extract($resultat);
+
+//  echo '<pre class="text-white">';
+//     var_dump($_POST);
+//     echo '</pre>';
+   if($_POST){
+
+  $valide = (empty($_POST['pseudo']) || $_POST['pseudo'] != $pseudo || empty($_POST['mdp'] )|| $_POST['mdp'] != $mdp) ? false : true; 
+
+  $erreurpseudo = (empty($_POST['pseudo']) || $_POST['pseudo'] != $pseudo)? 'Pseudo incorrect.' : null;
+  $erreurmdp = (empty($_POST['mdp'] ) || $_POST['mdp'] != $mdp)? 'Mot de passe incorrect.' : null;
+
+if($valide){
+     header('location:admin.php');
+     exit();
+}
+ }
+
+
+
+
+
+
+?>
 
 
 
@@ -23,7 +64,7 @@
  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Lobster|Pacifico" rel="stylesheet"> 
 </head>
 <body>
-    <?php if(empty($_POST)){ ?>
+    
 <nav class="navbar mt-3 effet">
   <a class="btn navbar-brand ml-5  border-danger rounded-circle" href="index.php"><i class="fas fa-home home"></i></a>
  
@@ -38,29 +79,26 @@
 
                     <div class="col-8 offset-1">
                         <form method="post">
-  <div class="form-group ">
-   
-    <input type="text" class="form-control mt-3" id="nom" name="nom" placeholder="Nom">
-    
+  
+  <div class="form-group text-center">
+    <div class="col-12 bg-danger rounded">
+    <?php  if(isset($erreurpseudo)) echo $erreurpseudo;  ?>
+    </div>
+    <input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="Pseudo">
   </div>
-  <div class="form-group">
-    
-    <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Prénom">
-  </div>
-  <div class="form-group">
-    
-    <input type="text" class="form-control" id="email" name="email" placeholder="Email">
-  </div>
+
+   <div class="col-12 bg-danger rounded">
+    <?php  if(isset($erreurmdp)) echo $erreurmdp; ?>
+    </div>
   <div class="form-group">
     
     <input type="text" class="form-control" id="mdp" name="mdp" placeholder="Mot de passe">
   </div>
  
-  <input type="submit" class="btn btn-primary btn-block">
+  <input type="submit" class="btn btn-primary btn-block" value="se connecter">
 </form>
 </div>
-</div> <?php }else{ include 'admin.php'; ?>
+</div> 
 
 
 
-<?php } ?>

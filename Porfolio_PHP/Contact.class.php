@@ -8,31 +8,34 @@ class Contact{
     private $date;
 
 
-    public function insertContact($nom, $prenom, $email, $message, $date){
+    public function insertContact($nom, $prenom, $email, $message){
 
         // recuperations des valeurs inserer ds les inputs
         $this->nom = strip_tags($nom);
         $this->prenom = strip_tags($prenom);
         $this->email = strip_tags($email);
         $this->message = strip_tags($message);
-        $this->date = strip_tags($date);
+        // $this->date = strip_tags($date);
 
         // Acces a la BDD
         require_once 'connexion.php';
         // requete d'insertion ds la BDD 
-        $requete = $pdo->prepare('INSERT INTO contacts (nom, prenom, email, message, date) VALUES (:nom, :prenom, :email, :message, :date) ');
+        $requete = $pdo->prepare('INSERT INTO contacts (nom, prenom, email, message, date) VALUES (:nom, :prenom, :email, :message, NOW()) ');
 
         $requete->execute([
             // association des marquers avec les valeurs
             ':nom' => $this->nom,
             ':prenom' => $this->prenom,
             ':email' => $this->email,
-            ':message' => $this->message,
-            ':date' => $this->date
+            ':message' => $this->message
+            // ':date' => $this->date
         ]);
 
         $requete->closeCursor();
 
     }
 
+
+
+         
 }
