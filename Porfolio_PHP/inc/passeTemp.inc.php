@@ -1,8 +1,8 @@
 <hr>
 <div class="container-fluid text-center">
 <div class="row">
-<div class="col-4 mt-5 text-white btn btn-block">
-    <h2 text-center>Loisirs</h2>
+<div class="col-6 mt-5 offset-3 text-white btn apropos btn-block">
+    <h2>Loisirs</h2>
   </div>
   </div>
 <div class="row mt-5 offset-1">
