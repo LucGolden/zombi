@@ -15,10 +15,10 @@ require_once '../inc/init.inc.php';
 
     // ICI il faudrait mettre tous les controles sur le formulaire...
 
-    $photo_bdd = ''; //pour pouvoir insérer catte valeur par défaut en BDD
+    $photo_bdd = ''; //pour pouvoir insérer cette valeur par défaut en BDD
 
     //... 5- suite de la PHOTO :
-    debug($_FILES);
+        debug($_FILES);
     if(!empty($_FILES['photo']['name'])){ // si il existe l'indice name à l'interieur de l'indice photo, c'est que je suis en train de d'uploader un fichier
 
         $nom_photo = 'ref' . $_POST['reference'] . '_' . $_FILES['photo']['name']; // on concatène la référence du produit avec le nom du fichier pour obtenir un nom de fichier unique (et ne pas écraser une photo existant)

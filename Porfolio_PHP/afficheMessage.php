@@ -24,10 +24,11 @@ $affichage2 .= '<div class="card  m-1 " style="width: 20rem;">';
  $affichage2 .= ' <div class="card-body">';
    $affichage2 .= '<h3 class="card-title">'  . $nom . ' ' . $prenom . '<br></h3>' ;
 
-   $affichage2 .= '<h4 class="card-subtitle mb-2 "> Email : ' . $email .  '</h4>';
+   $affichage2 .= '<h4 class="card-subtitle mb-2"> Email : '. ' <br> <span class="text-success">' . $email . '</span>' .'</h4>';
 
    $affichage2 .= '<p class="card-text"> Message : <br>'. $message . '</p>';
    $affichage2 .= '<p class="card-text"> Reçu le : '. $date . '</p>';
+   $affichage2 .= '<a href="" class="text-danger">Supprimer</a>';
   $affichage2 .= '</div>';
 $affichage2 .= '</div>';
 
@@ -62,12 +63,12 @@ $affichage2 .= '</div>';
 </head>
 <body>
 <nav class="navbar mt-3 effet">
-  <a class="btn navbar-brand ml-5  border-danger rounded-circle" href="index.php"><i class="fas fa-home home"></i></a>
+  <a class="btn navbar-brand ml-5 rounded-circle" href="index.php"><i class="fas fa-home home"></i></a>
   <a class="btn border-success bg-success mr-5" href="admin.php"><i class="fas fa-arrow-circle-left"></i>Retour</a>
 
  
 </nav>
-<div class="container text-center">
+<div class="container text-center" id="jqueryEffet">
 
 <div><?php echo $affichage;  ?></div>
 
@@ -77,5 +78,19 @@ $affichage2 .= '</div>';
     
 </div>
     </div>
+
+
+    
+   <script
+
+              src="https://code.jquery.com/jquery-3.3.1.min.js"
+
+              integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+
+              crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    
+    <script src="portfolio.js"></script>
 </body>
 </html>

@@ -8,7 +8,7 @@
   <a class="btn navbar-brand ml-5  border-primary rounded-circle" href="index.php"><i class="fas fa-home home"></i></a>
   <a class="btn border-warning mr-5" href="?lien=formations">Formations</a>
   <a class="btn border-danger mr-5" href="?lien=competences">Compétences</a>
-  <a class="btn border-info mr-5" href="?lien=creations">Réalisations</a>
+  <a class="btn border-info mr-5" href="?lien=realisations">Réalisations</a>
   <a class="btn border-primary bg-primary mr-5" href="?lien=luc">A Propos</a>
   <a class="btn border-success mr-5" href="?lien=contact">Contacts</a>
 </nav>
@@ -21,7 +21,7 @@
     </div>
     <div class="col-6 text-white">
         <h3>Luc M. Joinvil</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab minima non aspernatur quos enim reiciendis iusto sapiente accusantium quisquam accusamus voluptatum, omnis voluptas, totam ut voluptatem! Architecto excepturi magnam libero. Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi fugiat quidem et aspernatur? Esse aliquid blanditiis, facere, reiciendis labore repudiandae maiores, voluptate suscipit tenetur nulla at beatae eligendi necessitatibus voluptas?</p>
+        <p>Attiré par le monde du numérique et les nouvelles technologies, j'ai décidé de suivre la branche qui me plait le plus : le développement web. Autonome, à l'écoute et sachant travailler en équipe, mes qualités relationnelles complètent bien les connaissances techniques que je suis en train d’acquérir.  </p>
     </div>
 </div>
 </div>

@@ -2,10 +2,10 @@
 
     // var_dump($_POST);
 // ma class Contact
-require('Contact.class.php');
+require('MesClass/Contact.class.php');
 
 
-  
+   $messageValid = '';
 if(!empty($_POST)){
     extract($_POST);
 
@@ -26,7 +26,7 @@ if(!empty($_POST)){
     // $erreursujet = (empty($sujet)) ? 'Renseignez votre sujet.' : null;
     $erreurmessage = (empty($message) || strlen($message) < 10) ? 'Indiquez votre message.' : null;
     
-
+           
 
 
      // si tous les champs sont correctement renseignés
@@ -35,6 +35,8 @@ if(!empty($_POST)){
         $contact = new Contact();
 // on utilise la méthode insertContact de la classe Contact.class.php
         $contact->insertContact($nom, $prenom, $email, $message);
+
+        $messageValid .= 'Meesage envoyer avec succès';
     }
 
 
@@ -59,7 +61,7 @@ if(!empty($_POST)){
   <a class="btn navbar-brand ml-5  border-success  rounded-circle effetB" href="index.php"><i class="fas fa-home home"></i></a>
   <a class="btn border-warning mr-5" href="?lien=formations">Formations</a>
   <a class="btn border-danger mr-5" href="?lien=competences">Compétences</a>
-  <a class="btn border-info mr-5" href="?lien=creations">Réalisations</a>
+  <a class="btn border-info mr-5" href="?lien=realisations">Réalisations</a>
   <a class="btn border-primary mr-5" href="?lien=luc">A Propos</a>
   <a class="btn border-success bg-success mr-5" href="?lien=contact">Contacts</a>
 </nav>
@@ -75,6 +77,7 @@ if(!empty($_POST)){
 
  <div class="row mt-3">
      <div class="col-6">
+         <div class="text-white bg-success text-center rounded"><?php  echo $messageValid;  ?></div>
          <form action="" method="POST" id="form">
 
                 <div class="col-12  text-danger text-center rounded" id="messageError"><?php if (isset($erreurnom)) echo $erreurnom ; ?></div>

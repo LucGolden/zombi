@@ -12,7 +12,7 @@ $messageError = '';
 
 
 
-$requete = $pdo->query('SELECT * FROM connexion ');
+$requete = $pdo->query('SELECT * FROM connexion');
 
 $resultat = $requete->fetch(PDO::FETCH_ASSOC);
 
@@ -81,18 +81,18 @@ if($valide){
                         <form method="post">
   
   <div class="form-group text-center">
-    <div class="col-12 bg-danger rounded">
+    <div class="col-12 bg-danger rounded mt-2">
     <?php  if(isset($erreurpseudo)) echo $erreurpseudo;  ?>
     </div>
     <input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="Pseudo">
   </div>
 
-   <div class="col-12 bg-danger rounded">
+   <div class="col-12 bg-danger rounded mt-2">
     <?php  if(isset($erreurmdp)) echo $erreurmdp; ?>
     </div>
   <div class="form-group">
     
-    <input type="text" class="form-control" id="mdp" name="mdp" placeholder="Mot de passe">
+    <input type="password" class="form-control" id="mdp" name="mdp" placeholder="Mot de passe">
   </div>
  
   <input type="submit" class="btn btn-primary btn-block" value="se connecter">

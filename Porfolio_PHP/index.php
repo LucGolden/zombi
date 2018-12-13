@@ -42,7 +42,7 @@
             <div class="row mt-5">
                 <div class="col-7 offset-1  text-white mt-5 luc ">
                     <p class="offset-2">Je suis</p>
-                    <h1 class="text-center" id="h1">LUC M<a href="connexionAdmin.php">.</a> JOINVIL</h1>
+                    <h1 class="text-center" id="h1">LUC M<a href="connexionAdmin.php"><i class="fab fa-medium petit"></i></i></a> JOINVIL</h1>
                     <p class="junior ml-5"><b>développeur intégrateur junior</b></p>
                     <p class="offset-4" id="typeText">et c'est le site de mon <span>PORTFOLIO</span></p>
                 </div>
@@ -61,15 +61,12 @@
                 
                 <p><a class="btn btn-outline-warning btn-block" href="?lien=formations">Formations</a></p>
                 <p><a class="btn btn-outline-danger btn-block"  href="?lien=competences">Compétences</a></p>
-                <p><a class="btn btn-outline-info btn-block" href="?lien=creations">Réalisations</a></p>
+                <p><a class="btn btn-outline-info btn-block" href="?lien=realisations">Réalisations</a></p>
                 <p><a class="btn btn-outline-primary btn-block mt-3" href="?lien=luc">A Propos</a></p>
                 <p><a class="btn btn-outline-success btn-block" href="?lien=contact">Contacts</a></p>
                 <!-- <p><a class="btn btn-outline-warning btn-block" href="#"></a></p> -->
                 
             </div>
-            
-            
-            
         </div>
     </div>
     
@@ -77,8 +74,8 @@
     
     
     
-    <?php   } elseif(!empty($_GET) && $_GET['lien'] == 'creations') {
-        require_once 'inc/creation.inc.php';
+    <?php   } elseif(!empty($_GET) && $_GET['lien'] == 'realisations') {
+        require_once 'inc/realisations.inc.php';
     } elseif(!empty($_GET) && $_GET['lien'] == 'competences'){
         require_once 'inc/competences.inc.php';
     } elseif(!empty($_GET) && $_GET['lien'] == 'formations'){
@@ -106,6 +103,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
     
-    <script src="portfolio.js"></script>
+    <script src="JS/portfolio.js"></script>
 </body>
     </html>

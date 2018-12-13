@@ -93,15 +93,4 @@ class Controller{
                include 'view/contact.php';
         }
 
-
-
-
-
-
-
-
-
-
-
-
 }

@@ -9,7 +9,9 @@ $(document).ready(function(){
 
     $('.bgcLien').hide();
     $('.bgcLien').show(2500);
-
+    
+    $('.effet').hide();
+    $('.effet').fadeIn(3000);
  
     
 

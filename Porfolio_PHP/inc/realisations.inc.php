@@ -4,7 +4,7 @@
   <a class="btn navbar-brand ml-5  border-info rounded-circle" href="index.php"><i class="fas fa-home home"></i></a>
   <a class="btn border-warning mr-5 effetlien" href="?lien=formations">Formations</a>
   <a class="btn border-danger mr-5" href="?lien=competences">Compétences</a>
-  <a class="btn border-info bg-info mr-5" href="?lien=creations">Réalisations</a>
+  <a class="btn border-info bg-info mr-5" href="?lien=realisations">Réalisations</a>
   <a class="btn border-primary mr-5" href="?lien=luc">A Propos</a>
   <a class="btn border-success mr-5" href="?lien=contact">Contacts</a>
 </nav>
