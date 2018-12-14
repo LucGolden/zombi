@@ -1,3 +1,75 @@
+<?php
+
+// ma class Contact
+require('MesClass/Realisation.class.php');
+
+
+   $messageValid = '';
+
+if(!empty($_POST)){
+    
+    extract($_POST);
+
+     foreach($_POST as $indice => $valeur) {
+                $_POST[$indice] = htmlspecialchars($valeur, ENT_QUOTES); //pour eviter les injections CSS ET JS
+            }
+
+            // var_dump($_POST);
+            // echo '<pre class="text-white">';
+            // var_dump($_FILES);
+            // echo '</pre>';
+    $valid = (empty($_FILES['photo']['name']) || (empty($nom) || (strlen($nom) < 3 || strlen($nom) > 30 )) || (empty($prenom) || strlen($prenom) < 3 || strlen($prenom) > 30) ||  (empty($email) ||  !filter_var($email, FILTER_VALIDATE_EMAIL)) || (empty($telephone) || !is_numeric($telephone) || strlen($telephone) != 10) || (empty($linkedin)) || (empty($github))) ? false : true; // écriture ternaire pour if / else
+
+    $erreurphoto = (empty($_FILES['photo']['name'])) ? 'Erreur sur photo.' : null;
+
+    $erreurnom = (empty($nom) || (strlen($nom) < 3 || strlen($nom) > 100)) ? 'Erreur sur le nom.' : null;
+
+    $erreurprenom = (empty($prenom) || (strlen($prenom) < 3 || strlen($prenom) > 30)) ? 'Erreur sur le Prénom.' : null;
+
+    $erreuremail = (empty($email || !filter_var($email, FILTER_VALIDATE_EMAIL) > 100)) ? 'Erreur sur l\'email.' : null;
+
+    $erreurtelephone = (empty($telephone) || (!is_numeric($telephone) || strlen($telephone) != 10)) ? 'Erreur sur le Téléphone.' : null;
+
+    $erreurlinkedin = (empty($linkedin)) ? 'Erreur sur le linkedin.' : null;
+
+    $erreurgithub = (empty($github)) ? 'Erreur sur le Github.' : null;
+
+
+   
+
+    // $erreursujet = (empty($sujet)) ? 'Renseignez votre sujet.' : null;
+    $erreurcommentaire = (empty($commentaire) || strlen($commentaire) < 10) ? 'Indiquez votre commentiare.' : null;
+    
+    
+    
+    // si tous les champs sont correctement renseignés
+    if ($valid) {
+
+        $nom_photo = $_FILES['photo']['name'];
+        $photo_bdd = 'img/' . $nom_photo; 
+        copy($_FILES['photo']['tmp_name'], '' . $photo_bdd);
+
+
+        // on crée un nouvel objet (ou une instance) de la classe Contact.class.php
+        $realisation = new Realisation();
+        // on utilise la méthode insertRealisation de la classe Realisation.class.php
+        $realisation->insertRealisation($prenom, $nom, $email, $telephone, $linkedin, $github, $photo_bdd);
+        
+        $messageValid .= 'Information modifier avec succès'; 
+        
+    
+    }
+
+
+// var_dump($valid);
+}//FIN if(!empty($_POST)){
+
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,30 +106,48 @@
 
      <div class="col-12 m-5 p-5 text-center text-white">
             <h2>Modifier mes infos</h2>
-            <form method="POST">
+            <div class="bg-success rounded"><?php echo $messageValid; ?></div>
+            <form method="POST" enctype="multipart/form-data">
                 <div class="form-group">
-                    <input type="text" class="form-control mt-5" id="nom" aria-describedby="emailHelp"
+                <div class="bg-danger rounded"><?php if (isset($erreurnom)) echo $erreurnom;  ?></div>
+                    <input type="text" class="form-control mt-2" id="nom" name="nom" aria-describedby="emailHelp"
                         placeholder="Nom">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control mt-5" id="prenom" aria-describedby="emailHelp"
+                <div class="bg-danger rounded"><?php if (isset($erreurprenom)) echo $erreurprenom;  ?></div>
+
+                    <input type="text" class="form-control mt-2" id="prenom" name="prenom" aria-describedby="emailHelp"
                         placeholder="Prénom">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control mt-5" id="telephone" aria-describedby="emailHelp"
+                <div class="bg-danger rounded"><?php if (isset($erreurtelephone)) echo $erreurtelephone;  ?></div>
+
+                    <input type="text" class="form-control mt-2" id="telephone" name="telephone" aria-describedby="emailHelp"
                         placeholder="Téléphone">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control mt-5" id="email" aria-describedby="emailHelp"
+                <div class="bg-danger rounded"><?php if (isset($erreuremail)) echo $erreuremail;  ?></div>
+
+                    <input type="text" class="form-control mt-2" id="email" name="email" aria-describedby="emailHelp"
                         placeholder="Email">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control mb-5 mt-5" id="linkedin" aria-describedby="emailHelp"
+                <div class="bg-danger rounded"><?php if (isset($erreurlinkedin)) echo $erreurlinkedin;  ?></div>
+
+                    <input type="text" class="form-control mb-5 mt-2" id="linkedin" name="linkedin" aria-describedby="emailHelp"
                         placeholder="LinkedIn">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control mb-5 mt-5" id="github" aria-describedby="emailHelp"
+                <div class="bg-danger rounded"><?php if (isset($erreurgithub)) echo $erreurgithub;  ?></div>
+
+                    <input type="text" class="form-control mb-5 mt-2" id="github" name="github" aria-describedby="emailHelp"
                         placeholder="GitHub">
+                </div>
+                <div class="form-group">
+                <div class="bg-danger rounded"><?php if (isset($erreurphoto)) echo $erreurphoto;  ?></div>
+
+                    <input type="file" class="form-control mb-5 mt-2" id="photo" name="photo" aria-describedby="emailHelp"
+                        placeholder="photo">
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Modifier</button>
             </form>

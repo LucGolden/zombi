@@ -1,3 +1,40 @@
+<?php    
+        require_once 'connexion.php';
+
+        $affichage = '';
+        $affichage2 = '';
+
+      
+        // $requete = $pdo->query('SELECT * FROM contacts');
+        
+        
+        $requete = $pdo->query('SELECT * FROM realisations ORDER BY id_realisations DESC LIMIT 6 ');
+        // $affichage .= '<h3 class="alert alert-dark mt-1">Nombre de realisations : ' . $requete->rowCount() . '</h3>' ;
+
+while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
+    // echo '<pre class="text-white">';
+    // var_dump($info_realisations);
+    // echo '</pre>';
+    
+    extract($info_realisations);
+   
+    $affichage.=' <div class="col-3 mb-5 ml-5">';
+    $affichage.='<div class="card" style="width: 25rem; ">';
+    $affichage.='<img class="card-img-top" style="height:30rem;" src="'. $image . '" alt="Card image cap">';
+    $affichage.='<div class="card-body">';
+    $affichage.='<h5 class="card-title">' . $nom . '</h5>';
+    $affichage.='<p class="card-text">' .  $commentaire . '</p>';
+    // $affichage.='<!--<a href="#" class="btn btn-info">Go somewhere</a>-->';
+    $affichage.='</div>';
+    $affichage.='</div>';
+    $affichage.='</div>';
+
+}
+
+?>
+
+
+
 <body id="bodyRealisation">
 
 <nav class="navbar mt-3 effet">
@@ -10,28 +47,12 @@
 </nav>
 
 <div class="container-fluid creations" id="jqueryEffet">
-  <h1 class="text-center">Mes Réalisations</h1>
-<div class="row">
-<div class="col-4 ml-5">
-<div class="card" style="width: 25rem;">
-  <img class="card-img-top" src="img/Screenshot_2018-09-17 Luc Evaluation.png" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title <br> Juin-2018 Avril-2019</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <!--<a href="#" class="btn btn-info">Go somewhere</a>-->
+  <h1 class="text-center mb-5">Mes Réalisations</h1>
+
+  <div class="row offset-1">
+      <?php echo $affichage; ?>
+ 
   </div>
-</div>
-</div>
-<!--  -------------------   ---------------------------  -->
-<div class="card" style="width: 25rem;">
-  <img class="card-img-top" src="img/Screenshot_2018-09-17 Evaluation.png" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <!-- <a href="#" class="btn btn-info">Go somewhere</a> -->
-  </div>
-</div>
-</div>
 </div>
   
 </body>

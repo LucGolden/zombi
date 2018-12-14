@@ -6,7 +6,7 @@ class Realisation{
     private $commentaire;
     
 
-    public function insertrealisation($nom, $prenom, $email, $message){
+    public function insertRealisation($image, $nom, $commentaire){
 
         // recuperations des valeurs inserer ds les inputs
         $this->image = strip_tags($image);
@@ -21,10 +21,9 @@ class Realisation{
 
         $requete->execute([
             // association des marquers avec les valeurs
-            ':image' => $this->photo_bdd,
+            ':image' => $this->image,
             ':nom' => $this->nom,
-            ':commentaire' => $this->commentaire,
-           
+            ':commentaire' => $this->commentaire
         ]);
 
         $requete->closeCursor();

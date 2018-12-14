@@ -15,14 +15,14 @@ if(!empty($_POST)){
             }
 
             // var_dump($_POST);
-            echo '<pre class="text-white">';
-            var_dump($_FILES);
-            echo '</pre>';
-    $valid = (empty($_FILES['image']['name']) || (empty($nom) || (strlen($nom) < 3 || strlen($nom) > 30 )) || (empty($email) ) || empty($commentaire)) ? false : true; // écriture ternaire pour if / else
+            // echo '<pre class="text-white">';
+            // var_dump($_FILES);
+            // echo '</pre>';
+    $valid = (empty($_FILES['image']['name']) || (empty($nom) || (strlen($nom) < 3 || strlen($nom) > 100 )) || empty($commentaire)) ? false : true; // écriture ternaire pour if / else
 
     $erreurimage = (empty($_FILES['image']['name'])) ? 'Erreur sur l\'image.' : null;
 
-    $erreurnom = (empty($nom) || (strlen($nom) < 3 || strlen($nom) > 30)) ? 'Erreur sur le nom.' : null;
+    $erreurnom = (empty($nom) || (strlen($nom) < 3 || strlen($nom) > 100)) ? 'Erreur sur le nom.' : null;
 
 
    
@@ -34,21 +34,24 @@ if(!empty($_POST)){
     
     // si tous les champs sont correctement renseignés
     if ($valid) {
-        $nom_photo = 'id' . $_POST['id_realisations'] . '_' . $_FILES['image']['name'];
+
+        $nom_photo = $_FILES['image']['name'];
         $photo_bdd = 'img/' . $nom_photo; 
-        copy($_FILES['image']['tmp_name'], '../' . $photo_bdd);
+        copy($_FILES['image']['tmp_name'], '' . $photo_bdd);
+
+
         // on crée un nouvel objet (ou une instance) de la classe Contact.class.php
-        $Realisation = new Realisation();
+        $realisation = new Realisation();
         // on utilise la méthode insertRealisation de la classe Realisation.class.php
-        $realisation->insertRealisation($image, $nom, $commentaire);
+        $realisation->insertRealisation($photo_bdd, $nom, $commentaire);
         
-        $messageValid .= 'Réealisation enregistrer avec succès'; 
+        $messageValid .= 'Réalisation enregistrer avec succès'; 
         
     
     }
 
 
-var_dump($valid);
+// var_dump($valid);
 }//FIN if(!empty($_POST)){
 
 
