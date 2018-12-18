@@ -14,16 +14,16 @@ if(!empty($_POST)){
     //             $_POST[$indice] = htmlspecialchars($valeur, ENT_QUOTES); //pour eviter les injections CSS ET JS
     //         }
 
-            // var_dump($_POST);
+            
 
-    $valid = (empty($titre) || (strlen($titre) < 3 || strlen($titre) > 30) || (empty($icone)) ) ? false : true; // écriture ternaire pour if / else
+    $valid = (empty($titre) || (strlen($titre) < 3 || strlen($titre) > 100) || (empty($icone)) ) ? false : true; // écriture ternaire pour if / else
 
-    $erreurtitre = (empty($titre) || (strlen($titre) < 3 || strlen($titre) > 30)) ? 'Erreur sur le titre' : null;
+    $erreurtitre = (empty($titre) || (strlen($titre) < 3 || strlen($titre) > 100)) ? 'Erreur sur le titre' : null;
 
     $erreuricone = (empty($icone)) ? 'Erreur sur l\'icone' : null;
 
 
-    
+    // var_dump($_POST);
 
 
 
@@ -80,15 +80,15 @@ if(!empty($_POST)){
 
      <div class="col-12 m-5 p-5 text-center text-white">
             <h2>Ajouter une compétence</h2>
-            <div><?php  echo $messageVal;  ?></div>
+            <div class="bg-success rounded"><?php  echo $messageVal;  ?></div>
             <form method="POST">
                 <div class="form-group">
-                    <div class="text-danger"><?php   if (isset($erreurtitre)) echo $erreurtitre ;  ?></div>
-                    <input type="text" class="form-control mt-5" id="titre" name="titre" aria-describedby="emailHelp"
+                    <div class="bg-danger rounded"><?php   if (isset($erreurtitre)) echo $erreurtitre ;  ?></div>
+                    <input type="text" class="form-control mt-2" id="titre" name="titre" aria-describedby="emailHelp"
                     placeholder="Titre ">
                 </div>
                 <div class="form-group">
-                        <div class="text-danger"><?php   if (isset($erreuricone)) echo $erreuricone ;  ?></div>
+                        <div class="bg-danger rounded"><?php   if (isset($erreuricone)) echo $erreuricone ;  ?></div>
                     <input type="text" class="form-control mb-5 mt-5" id="icone" name="icone" aria-describedby="emailHelp"
                         placeholder="Icone">
                 </div>

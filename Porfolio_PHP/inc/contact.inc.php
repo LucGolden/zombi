@@ -48,11 +48,26 @@ if(!empty($_POST)){
 
 
 
+  
+        require_once 'connexion.php';
 
+        $affichage = '';
+       
+        $requete = $pdo->query('SELECT * FROM luc_admin WHERE id_admin = 1');
+        
+while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
+    // echo '<pre class="text-white">';
+    // var_dump($info_realisations);
+    // echo '</pre>';
+    
+    extract($info_realisations);
+   
 
-
+}
 
 ?>
+
+
 
 
 <body id="bodyContact">
@@ -118,9 +133,11 @@ if(!empty($_POST)){
             <div class="col-5 offset-1 text-white text-center contact mt-5 mb-5 ml-1">
               <h3 class="mt-5">Vous pouvez me contacter</h3>
 
-                <p class="p-3"><i class="fas fa-mobile-alt "></i> : (+33) 7 53 41 25 53</p>
-                <p class="p-2"><i class="fas fa-envelope "></i> : lucmerlentzjoinvil@gmail.com</p>
-                <p class="p-2"> <a href="www.linkedin.com/in/luc-merlentz-joinvil"><i class="fab fa-linkedin "></i> : Luc Merlentz Joinvil</a> </p>
+                <p class="p-3"><i class="fas fa-mobile-alt "></i> : <?php echo $telephone;  ?></p>
+                <p class="p-2"><i class="fas fa-envelope "></i> : <?php  echo $email;  ?></p>
+                <p class="p-2"> <a href="<?php  echo $linkedin;  ?>"><i class="fab fa-linkedin "></i> : Luc Merlentz Joinvil</a> </p>
+
+                <p class="p-2"><i class="fab fa-github"></i> : <?php  echo $github;  ?></p>
             </div>
         </div>
 

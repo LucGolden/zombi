@@ -2,7 +2,7 @@
         require_once 'connexion.php';
 
         $affichage = '';
-        $affichage2 = '';
+       
 
       
         // $requete = $pdo->query('SELECT * FROM contacts');
@@ -19,7 +19,7 @@ while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
     extract($info_realisations);
    
     $affichage.=' <div class="col-3 mb-5 ml-5">';
-    $affichage.='<div class="card" style="width: 25rem; ">';
+    $affichage.='<div class="card style" style="width: 25rem; ">';
     $affichage.='<img class="card-img-top" style="height:30rem;" src="'. $image . '" alt="Card image cap">';
     $affichage.='<div class="card-body">';
     $affichage.='<h5 class="card-title">' . $nom . '</h5>';

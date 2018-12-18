@@ -1,4 +1,27 @@
 
+<?php    
+        require_once 'connexion.php';
+
+        $affichage = '';
+       
+
+      
+        
+        
+        $requete = $pdo->query('SELECT * FROM luc_admin WHERE id_admin = 1');
+        
+
+while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
+    // echo '<pre class="text-white">';
+    // var_dump($info_realisations);
+    // echo '</pre>';
+    
+    extract($info_realisations);
+   
+
+}
+
+?>
 
 <body id="bodyQui">
 
@@ -17,11 +40,11 @@
 <div class="container stylef effetA p-3 mt-5 apropos">
 <div class="row mt-5 ">
     <div class="col-6 img">
-        <img src="img/20180811_213503.jpg" alt="lion"  class="img-thumbnail">
+        <img src="<?php  echo $photo;  ?>" alt="lion"  class="rounded-circle img-thumbnail">
     </div>
     <div class="col-6 text-white">
-        <h3>Luc M. Joinvil</h3>
-        <p>Attiré par le monde du numérique et les nouvelles technologies, j'ai décidé de suivre la branche qui me plait le plus : le développement web. Autonome, à l'écoute et sachant travailler en équipe, mes qualités relationnelles complètent bien les connaissances techniques que je suis en train d’acquérir.  </p>
+        <h3><?php echo $nom . ' ' . $prenom ; ?></h3>
+        <p><?php echo $apropos;  ?> </p>
     </div>
 </div>
 </div>

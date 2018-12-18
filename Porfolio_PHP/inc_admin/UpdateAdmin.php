@@ -1,7 +1,7 @@
 <?php
 
 // ma class Contact
-require('MesClass/Realisation.class.php');
+require('MesClass/Admin.class.php');
 
 
    $messageValid = '';
@@ -18,7 +18,14 @@ if(!empty($_POST)){
             // echo '<pre class="text-white">';
             // var_dump($_FILES);
             // echo '</pre>';
-    $valid = (empty($_FILES['photo']['name']) || (empty($nom) || (strlen($nom) < 3 || strlen($nom) > 30 )) || (empty($prenom) || strlen($prenom) < 3 || strlen($prenom) > 30) ||  (empty($email) ||  !filter_var($email, FILTER_VALIDATE_EMAIL)) || (empty($telephone) || !is_numeric($telephone) || strlen($telephone) != 10) || (empty($linkedin)) || (empty($github))) ? false : true; // écriture ternaire pour if / else
+    $valid = (empty($_FILES['photo']['name']) || 
+    (empty($nom) || (strlen($nom) < 3 || strlen($nom) > 30 )) ||
+     (empty($prenom) || strlen($prenom) < 3 || strlen($prenom) > 30) ||
+      (empty($email) ||  !filter_var($email, FILTER_VALIDATE_EMAIL)) || 
+      (empty($telephone) || !is_numeric($telephone) || strlen($telephone) != 10) ||
+       (empty($linkedin)) || 
+       (empty($github)) || 
+       empty($apropos) || strlen($apropos) < 10) ? false : true; // écriture ternaire pour if / else
 
     $erreurphoto = (empty($_FILES['photo']['name'])) ? 'Erreur sur photo.' : null;
 
@@ -34,6 +41,8 @@ if(!empty($_POST)){
 
     $erreurgithub = (empty($github)) ? 'Erreur sur le Github.' : null;
 
+    $erreurapropos = (empty($apropos) || strlen($apropos) < 10) ? 'Erreur.' : null;
+
 
    
 
@@ -41,7 +50,9 @@ if(!empty($_POST)){
     $erreurcommentaire = (empty($commentaire) || strlen($commentaire) < 10) ? 'Indiquez votre commentiare.' : null;
     
     
-    
+    echo '<pre class="text-white">';
+    var_dump($_FILES);
+    echo '<pre>';
     // si tous les champs sont correctement renseignés
     if ($valid) {
 
@@ -49,11 +60,10 @@ if(!empty($_POST)){
         $photo_bdd = 'img/' . $nom_photo; 
         copy($_FILES['photo']['tmp_name'], '' . $photo_bdd);
 
-
         // on crée un nouvel objet (ou une instance) de la classe Contact.class.php
-        $realisation = new Realisation();
+        $realisation = new Admin();
         // on utilise la méthode insertRealisation de la classe Realisation.class.php
-        $realisation->insertRealisation($prenom, $nom, $email, $telephone, $linkedin, $github, $photo_bdd);
+        $realisation->modifAdmin($prenom, $nom, $email, $telephone, $linkedin, $github, $photo_bdd, $apropos);
         
         $messageValid .= 'Information modifier avec succès'; 
         
@@ -104,31 +114,31 @@ if(!empty($_POST)){
 <div class="container">
     <div class="row">
 
-     <div class="col-12 m-5 p-5 text-center text-white">
+     <div class="col-12 text-center text-white">
             <h2>Modifier mes infos</h2>
             <div class="bg-success rounded"><?php echo $messageValid; ?></div>
             <form method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                 <div class="bg-danger rounded"><?php if (isset($erreurnom)) echo $erreurnom;  ?></div>
-                    <input type="text" class="form-control mt-2" id="nom" name="nom" aria-describedby="emailHelp"
+                    <input type="text" class="form-control mb-5 mt-2" id="nom" name="nom" aria-describedby="emailHelp"
                         placeholder="Nom">
                 </div>
                 <div class="form-group">
                 <div class="bg-danger rounded"><?php if (isset($erreurprenom)) echo $erreurprenom;  ?></div>
 
-                    <input type="text" class="form-control mt-2" id="prenom" name="prenom" aria-describedby="emailHelp"
+                    <input type="text" class="form-control mb-5 mt-2" id="prenom" name="prenom" aria-describedby="emailHelp"
                         placeholder="Prénom">
                 </div>
                 <div class="form-group">
                 <div class="bg-danger rounded"><?php if (isset($erreurtelephone)) echo $erreurtelephone;  ?></div>
 
-                    <input type="text" class="form-control mt-2" id="telephone" name="telephone" aria-describedby="emailHelp"
+                    <input type="text" class="form-control mb-5 mt-2" id="telephone" name="telephone" aria-describedby="emailHelp"
                         placeholder="Téléphone">
                 </div>
                 <div class="form-group">
                 <div class="bg-danger rounded"><?php if (isset($erreuremail)) echo $erreuremail;  ?></div>
 
-                    <input type="text" class="form-control mt-2" id="email" name="email" aria-describedby="emailHelp"
+                    <input type="text" class="form-control mb-5 mt-2" id="email" name="email" aria-describedby="emailHelp"
                         placeholder="Email">
                 </div>
                 <div class="form-group">
@@ -149,6 +159,12 @@ if(!empty($_POST)){
                     <input type="file" class="form-control mb-5 mt-2" id="photo" name="photo" aria-describedby="emailHelp"
                         placeholder="photo">
                 </div>
+
+                <div class="bg-danger rounded"><?php if (isset($erreurapropos)) echo $erreurapropos;  ?></div>
+
+                  <textarea name="apropos" id="apropos" class="form-control mb-5" placeholder="A propos"></textarea>
+                </div>
+
                 <button type="submit" class="btn btn-primary btn-block">Modifier</button>
             </form>
         </div>

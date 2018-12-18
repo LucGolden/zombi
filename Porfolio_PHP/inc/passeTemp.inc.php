@@ -20,7 +20,7 @@
 </div>
   <div class="col-4 text-center mt-5 text-white">
 
-  <i class="fas fa-film iconL"></i><br><span>SERIES, FILMS</span>
+  <i class="fas fa-film iconL"></i><br><span>SERIES, FILMS & Musique</span>
 
 </div>
 </div>

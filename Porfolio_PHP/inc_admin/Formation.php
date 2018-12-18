@@ -2,7 +2,7 @@
 require('MesClass/Formation.class.php');
 
 
-  
+  $messageVal = '';
 if(!empty($_POST)){
     extract($_POST);
 

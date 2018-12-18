@@ -1,10 +1,20 @@
 <?php
 
-// if(!empty($_GET) && $_GET['lien'] == 'creation') {
-   
-//   require_once 'inc/creation.inc.php';
-// }
+    require_once 'connexion.php';
 
+        $affichage = '';
+       
+        $requete = $pdo->query('SELECT * FROM luc_admin WHERE id_admin = 1');
+        
+while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
+    // echo '<pre class="text-white">';
+    // var_dump($info_realisations);
+    // echo '</pre>';
+    
+    extract($info_realisations);
+   
+
+}
 
 ?>
 <!DOCTYPE html>
@@ -40,11 +50,11 @@
         <div class="container-fluid" >
             
             <div class="row mt-5">
-                <div class="col-7 offset-1  text-white mt-5 luc ">
+                <div class="col-7  offset-1  text-white mt-5 luc ">
                     <p class="offset-2">Je suis</p>
-                    <h1 class="text-center" id="h1">LUC M<a href="connexionAdmin.php"><i class="fab fa-medium petit"></i></i></a> JOINVIL</h1>
-                    <p class="junior ml-5"><b>développeur intégrateur junior</b></p>
-                    <p class="offset-4" id="typeText">et c'est le site de mon <span>PORTFOLIO</span></p>
+                    <h1 class="text-center rounded-circle" id="h1"><?php echo $prenom;  ?><a href="connexionAdmin.php"><i class="fab fa-medium petit"></i></i></a> <?php echo $nom;  ?></h1>
+                    <p class="junior ml-5"><b>développeur intégrateur <span> junior</span></b></p>
+                    <p class="offset-4" id="typeText">& c'est le <span> site</span> de mon <span>PORTFOLIO</span></p>
                 </div>
             </div>
         </div>
@@ -87,7 +97,7 @@
     } ?>
 
      <footer>
-         <p class="text-center text-white "><span> TDR- Luc M. Joinvil développeur intégrateur junior</span></p>
+         <p class="text-center text-white "><span>Luc M. Joinvil développeur intégrateur junior</span></p>
         </footer>
     </div>
     </div>

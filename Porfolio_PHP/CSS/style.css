@@ -1,8 +1,12 @@
+
+/* PAGE ACCEUIL */
 body{
     
     background-image: url(../img/home-office-336373_960_720.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
+
     /* background-color: #529cba; */
 
     font-family: 'Pacifico', cursive;
@@ -10,88 +14,22 @@ body{
     font-family: 'Kaushan Script', cursive;
     
 }
-
-#bodyContact{
-    background-image: url(../img/treste-global-connections.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
-#bodyCompetence{
-    background-image: url(../img/thumb-1920-316688.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 10px;
-}
-.style{
-    border-radius: 10px;
-    box-shadow: 0 0 10px 10px #000;
-
-}
-.style:hover{
-     transform: scale(1.1);
-    transition: .5s cubic-bezier(0, 3, .4, 1);
-    
-}
-.stylef{
-    border-radius: 10px;
-    box-shadow: 0 0 10px 10px #000;
-}
-#bodyFormation{
-     background-image: url(../img/sans-titreeeeeee.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    
-}
-#bodyRealisation{
-    background-image: url(../img/thumb-1920-390071.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    
-}
-#bodyQui{
-    background-image: url(../img/question_marks_3d_shape_112826_1920x1080.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    
-
-}
-/* .background{
-    
-} */
-
-/* body img{
-    filter: blur(2px);
-    z-index: -1;
-} */
-
-/* i{
-    font-size: 35px;
-} */
 .luc h1{
     font-size: 10em;
     color: rgb(255, 0, 0);
-    background-color: rgba(255, 255, 255, 0.103); 
-    box-shadow: 0 0 10px 5px #000;
-    border-radius: 30px 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 253, 253, 0.411)); 
+    /* box-shadow: 0 0 10px 5px #000;
+    border-radius: 30px 0; */
+}
+
+.home{
+    color: rgb(250, 248, 248);
+    font-size: 50px;
 }
 .petit{
     font-size: 25px;
 }
-/* a{ */
-   /* font-family: 'Pacifico', cursive;
-    font-family: 'Lobster', cursive;
-    font-family: 'Kaushan Script', cursive; 
-}
- h1{
 
-     font-family: 'Pacifico', cursive;
-    font-family: 'Lobster', cursive;
-    font-family: 'Kaushan Script', cursive;
-} */
 .luc p{
     font-size: 3.4em;
 }
@@ -101,35 +39,16 @@ body{
 }
 span{
     font-size: 25px;
-     /* font-family: 'Pacifico', cursive;
-    font-family: 'Lobster', cursive;
-    font-family: 'Kaushan Script', cursive; */
-    /* color: white; */
+    
 }
 .luc span:hover{
     border-radius: 0 30px;
 }
 
-.luc{
-    /* font-family: 'Pacifico', cursive;
-    font-family: 'Lobster', cursive;    */
-    /* font-family: 'Pacifico', cursive;
-    font-family: 'Lobster', cursive;
-    font-family: 'Kaushan Script', cursive; */
-}
+
 
 a{
     color: white;
-}
-#position{
-    position: absolute;
-    top: 10em;
-}
-.btn{
-    font-size: 20px;
-}
-.bgcLien{
-    background-image: linear-gradient(rgb(34, 31, 31), rgba(0, 0, 0, 0.39));
 }
 
 .bgcLien p a:hover{
@@ -137,24 +56,70 @@ a{
     transition: .5s cubic-bezier(0, 3, .4, 1);
 }
 
+.btn{
+    font-size: 20px;
+}
+.bgcLien{
+    background-image: linear-gradient(rgb(34, 31, 31), rgba(0, 0, 0, 0.39));
+}
+
+
 .bgcLien:hover p a:not(:hover){
     filter:grayscale(1) blur(1px);
 }
 
-/* .luc:hover{
-    background-color: rgba(255, 0, 0, 0.383);
-    -moz-transition-duration: 2s;
+
+/* ---------------- PAGE DE FORMATION ------------------ */
+#bodyFormation{
+     background-image: url(../img/sans-titreeeeeee.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
 }
-.luc:hover span{
-    color: #028fe19b;
-    -moz-transition-duration: 2s;
 
-} */
+.formation{
+    background-color: #019ec93a;
+}
 
-/* ---------------Créations--------------------- */
-.home{
-    color: rgb(250, 248, 248);
-    font-size: 50px;
+
+
+
+/* ------------------------COMPETENCES------------------------ */
+
+#bodyCompetence{
+    background-image: url(../img/thumb-1920-316688.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    border-radius: 10px;
+}
+
+
+
+/* -----------A PROPOS--------------- */
+#bodyQui{
+    background-image: url(../img/question_marks_3d_shape_112826_1920x1080.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+.apropos{
+    background-color: #fb471541;
+}
+
+
+
+
+
+/* ---------------REALISATIONS--------------------- */
+#bodyRealisation{
+    background-image: url(../img/thumb-1920-390071.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
 }
 .icon{
     font-size: 10em;
@@ -165,14 +130,20 @@ a{
      font-size: 100px;
 }
 
-
-
 .effet .btn:hover{
     transform: scale(1.3);
     transition: .5s cubic-bezier(0, 3, .4, 1);
 }
 
+
 /* ----------------- Contacts ------------------ */
+#bodyContact{
+    background-image: url(../img/treste-global-connections.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
 .contact{
     background-color: #28a7468a;
     border-radius: 5px;
@@ -189,14 +160,9 @@ a{
     transform: scale(2.3);
      transition: .5s cubic-bezier(0, 3, .4, 1);
 }
-.apropos{
-    background-color: #fb471541;
-}
+
 .contacts{
     background-color: #0237667a;
-}
-.formation{
-    background-color: #019ec93a;
 }
 
 
@@ -214,6 +180,21 @@ a{
 }
 /* -------------------------------------------- */
 
+/* -----------STYLE CSS ----------------- */
+.style{
+    border-radius: 10px;
+    box-shadow: 0 0 10px 10px #000;
+
+}
+.style:hover{
+     transform: scale(1.1);
+    transition: .5s cubic-bezier(0, 3, .4, 1);
+    
+}
+.stylef{
+    border-radius: 10px;
+    box-shadow: 0 0 10px 10px #000;
+}
 
 
 /* -------------- Footer ------------------- */

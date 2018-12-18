@@ -22,7 +22,7 @@ while ($info_contact = $requete->fetch(PDO::FETCH_ASSOC)){
 
       $affichage .= '<div class="row">';
     $affichage.= '<div class="col-12 mt-5">';
-        $affichage.= '<div class="jumbotron jumbotron-fluid rounded">';
+        $affichage.= '<div class="jumbotron jumbotron-fluid rounded style">';
   $affichage.= '<div class="container">';
     $affichage.= '<h2 class="display-4">'. $domaine .'</h2>';
     $affichage.= '<p class="lead">'. $nom_institution .' <br> '. $date_debut . ' ' . $date_fin .'</p>';
