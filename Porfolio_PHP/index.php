@@ -23,7 +23,7 @@ while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=*, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mon site porfolio</title>
+    <title>Le site porfolio de Luc M</title>
 
     <!-- Lien de bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
@@ -50,11 +50,11 @@ while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
         <div class="container-fluid" >
             
             <div class="row mt-5">
-                <div class="col-7  offset-1  text-white mt-5 luc ">
+                <div class="col-m-7  offset-1  text-white mt-5 luc ">
                     <p class="offset-2">Je suis</p>
                     <h1 class="text-center rounded-circle" id="h1"><?php echo $prenom;  ?><a href="connexionAdmin.php"><i class="fab fa-medium petit"></i></i></a> <?php echo $nom;  ?></h1>
-                    <p class="junior ml-5"><b>développeur intégrateur <span> junior</span></b></p>
-                    <p class="offset-4" id="typeText">& c'est le <span> site</span> de mon <span>PORTFOLIO</span></p>
+                    <p class="junior ml-5"><b>développeur intégrateur<span> junior</span></b></p>
+                    <p class="offset-2" id="typeText">& c'est le <span>site</span> de mon <span>PORTFOLIO</span></p>
                 </div>
             </div>
         </div>

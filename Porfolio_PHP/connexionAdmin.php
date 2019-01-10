@@ -1,6 +1,6 @@
 <?php  
 
-require 'Connexion.php';
+require 'connexion.php';
 
 // $info_connexion = new Connexion();
 // $info_connexion->ConnexionAdmin($pseudo, $mdp);

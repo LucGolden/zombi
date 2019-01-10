@@ -45,6 +45,9 @@ while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
     <div class="col-6 text-white">
         <h3><?php echo $nom . ' ' . $prenom ; ?></h3>
         <p><?php echo $apropos;  ?> </p>
+        <a  class="btn ml-5 mt-5" href="img/CV_Luc2.0.pdf" target="_blank" download="">
+                      Télécharger mon CV
+                   </a>
     </div>
 </div>
 </div>

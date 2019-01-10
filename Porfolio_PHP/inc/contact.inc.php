@@ -2,7 +2,7 @@
 
     // var_dump($_POST);
 // ma class Contact
-require('MesClass/Contact.class.php');
+require_once 'MesClass/Contact.class.php';
 
 
    $messageValid = '';
@@ -112,9 +112,7 @@ while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
                         <input type="text" name="email" id="email" class="form-control" placeholder="Email">
                     </div>
 
-                    <!-- <div class="form-group p-3">
-                        <input type="phone" name="telephone" id="telephone" class="form-control" placeholder="Télephone">
-                    </div> -->
+                   
                 <div class="col-12 text-danger text-center rounded" id="messageError"><?php if (isset($erreurmessage)) echo $erreurmessage; ?></div>
 
                     <div class="form-group p-3">
@@ -135,7 +133,7 @@ while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
 
                 <p class="p-3"><i class="fas fa-mobile-alt "></i> : <?php echo $telephone;  ?></p>
                 <p class="p-2"><i class="fas fa-envelope "></i> : <?php  echo $email;  ?></p>
-                <p class="p-2"> <a href="<?php  echo $linkedin;  ?>"><i class="fab fa-linkedin "></i> : Luc Merlentz Joinvil</a> </p>
+                <p class="p-2"> <a href="<?php echo $linkedin;  ?>" target="_blank"><i class="fab fa-linkedin "></i> : Luc Merlentz Joinvil</a> </p>
 
                 <p class="p-2"><i class="fab fa-github"></i> : <?php  echo $github;  ?></p>
             </div>

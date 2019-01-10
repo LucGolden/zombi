@@ -1,8 +1,24 @@
-<?php  
+<?php    
+        require_once 'connexion.php';
 
+        $affichage = '';
+       
 
+      
+        
+        
+        $requete = $pdo->query('SELECT * FROM luc_admin WHERE id_admin = 1');
+        
 
+while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
+    // echo '<pre class="text-white">';
+    // var_dump($info_realisations);
+    // echo '</pre>';
+    
+    extract($info_realisations);
+   
 
+}
 
 ?>
 
@@ -34,7 +50,7 @@
 
 
 <nav class="navbar mt-3 effet">
-  <a class="btn navbar-brand ml-5  border-danger rounded-circle" href="index.php"><i class="fas fa-home home"></i></a>
+  <a class="btn navbar-brand ml-5  border-danger rounded-circle" href="index.php"><i class="fas fa-power-off home"></i></a>
   <!-- <a class="btn border-success bg-success mr-5" href="afficheMessage.php">Messages</a>
   <a class="btn border-success bg-success mr-5" href="Competence.php">Add Compétence</a>
   <a class="btn border-success bg-success mr-5" href="Competence.php">Add Formation</a> -->
@@ -44,9 +60,9 @@
 
                 <div class="row luc text-center mt-5">
                     <div class="col-12">
-                    <h1 id="h1">Bonjour Luc M.</h1>
+                    <h1 id="h1" class="rounded">Bonjour <?php echo $nom;  ?>.</h1>
                     <br>
-                    <p class="offset-4">Bienvenue Sur ta page Admin</p>
+                    <p class="offset-4">Bienvenue sur ta page <span>Admin</span> </p>
                 </div>
                 </div>
             </div>
@@ -57,20 +73,20 @@
                 
                 
                 <p><a class="btn btn-outline-success btn-block" href="afficheMessage.php">Voir mes messages</a></p>
-                <p><a class="btn btn-outline-danger btn-block"  href="?lien=Addcompetences">Ajouter une Compétences</a></p>
-                <p><a class="btn btn-outline-info btn-block" href="?lien=Addrealisations">Ajouter une Réalisations</a></p>
+                <p><a class="btn btn-outline-danger btn-block"  href="?lien=Addcompetences">Ajouter une Compétence</a></p>
+                <p><a class="btn btn-outline-info btn-block" href="?lien=Addrealisations">Ajouter une Réalisation</a></p>
                 <p><a class="btn btn-outline-primary btn-block mt-3" href="?lien=ModifInfos">Modifier mes infos</a></p>
-                <p><a class="btn btn-outline-warning btn-block" href="?lien=Addformations"> ajouter une Formations</a></p>
+                <p><a class="btn btn-outline-warning btn-block" href="?lien=Addformations"> ajouter une Formation</a></p>
                 <!-- <p><a class="btn btn-outline-warning btn-block" href="#"></a></p> -->
                 
             </div>
         </div>
     <?php   } elseif(!empty($_GET) && $_GET['lien'] == 'Addrealisations') {
-        require_once 'inc_admin/realisation.php';
+        require_once 'inc_admin/Realisation.php';
     } elseif(!empty($_GET) && $_GET['lien'] == 'Addcompetences'){
-        require_once 'inc_admin/competence.php';
+        require_once 'inc_admin/Competence.php';
     } elseif(!empty($_GET) && $_GET['lien'] == 'Addformations'){
-        require_once 'inc_admin/formation.php';
+        require_once 'inc_admin/Formation.php';
     }elseif(!empty($_GET) && $_GET['lien'] == 'ModifInfos'){
         require_once 'inc_admin/UpdateAdmin.php';
     } ?>

@@ -2,15 +2,33 @@
         require_once 'connexion.php';
 
         $affichage = '';
+        $contenu = '';
         $affichage2 = '';
 
       
+       
+if (isset($_GET['action']) && $_GET['action'] == 'suppression' && isset( $_GET['id_contact'])){ //si exxiste l'indice "action" ds $_GET et que sa valeur est "seppression" et que existe aussi l'indice "id_produit", alors je peux traiter la suppression demandé
+
+    $resultat = $pdo->prepare("DELETE FROM contacts WHERE id_contact = :id_contact");
+
+    $resultat->execute([':id_contact' => $_GET['id_contact']]);
+    
+
+    if ($resultat->rowCount() == 1){ // si le DELETE retourne 1 ligne, c'est que l'id_produit existait et qu'il a pu être supprimé :
+        $contenu .= '<div class="alert alert-success mt-1">Le message N° ' .  $_GET['id_contact']. ' a bien été supprimé.</div>' ;
+
+    }else{
+        $contenu .= '<div class="alert alert-danger mt-1">erreur lors de la suppression du message n° ' .  $_GET['id_contact']. '.</div>' ;
+
+    }
+} 
+
         $requete = $pdo->query('SELECT * FROM contacts');
-        $affichage .= '<h3 class="alert alert-dark mt-1">Nombre de Message : ' . $requete->rowCount() . '</h3>' ;
+        $affichage .= '<h3 class="alert alert-dark mt-1">Nombre de Message(s) : ' . $requete->rowCount() . '</h3>' ;
 
 
-        $requete2 = $pdo->query('SELECT * FROM contacts  ORDER BY id_contact DESC LIMIT 6 ');
-
+$requete2 = $pdo->query('SELECT * FROM contacts  ORDER BY id_contact DESC LIMIT 6 ');
+        
 while ($info_contact = $requete2->fetch(PDO::FETCH_ASSOC)){
     // echo '<pre class="text-white">';
     // var_dump($info_contact);
@@ -28,14 +46,17 @@ $affichage2 .= '<div class="card  m-1 " style="width: 20rem;">';
 
    $affichage2 .= '<p class="card-text"> Message : <br>'. $message . '</p>';
    $affichage2 .= '<p class="card-text"> Reçu le : '. $date . '</p>';
-   $affichage2 .= '<a href="" class="text-danger">Supprimer</a>';
+   $affichage2 .= '<a href="?action=suppression&id_contact=' . $id_contact . '"onclick="return(confirm(\' Etes vous certain de vouloir supprimmer ce produit ? \'))" class="text-danger">Supprimer</a>';
   $affichage2 .= '</div>';
 $affichage2 .= '</div>';
 
 
+
+
+
+
+
 }
-
-
 
 
 
@@ -71,6 +92,7 @@ $affichage2 .= '</div>';
 <div class="container text-center" id="jqueryEffet">
 
 <div><?php echo $affichage;  ?></div>
+<div><?php echo $contenu;  ?></div>
 
 <div class="row m-5">
     

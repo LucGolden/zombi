@@ -17,7 +17,7 @@ class Formation{
       
 
         // Acces a la BDD
-        require_once 'connexion.php';
+        require('connexion.php');
         // requete d'insertion ds la BDD 
         $requete = $pdo->prepare('INSERT INTO formations (nom_institution, domaine, date_debut, date_fin) VALUES (:nom_institution, :domaine,  :date_debut, :date_fin) ');
 

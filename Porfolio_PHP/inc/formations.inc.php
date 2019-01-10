@@ -5,7 +5,7 @@
         $affichage2 = '';
 
       
-        $requete = $pdo->query('SELECT * FROM formations');
+        $requete = $pdo->query('SELECT * FROM formations ORDER BY id_formation DESC');
         // $affichage .= '<h3 class="alert alert-dark mt-1">Nombre de formations : ' . $requete->rowCount() . '</h3>' ;
 
 

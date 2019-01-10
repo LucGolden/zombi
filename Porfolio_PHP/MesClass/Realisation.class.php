@@ -15,7 +15,7 @@ class Realisation{
       
 
         // Acces a la BDD
-        require_once 'connexion.php';
+        require('connexion.php');
         // requete d'insertion ds la BDD 
         $requete = $pdo->prepare('REPLACE INTO realisations (image, nom, commentaire) VALUES (:image, :nom, :commentaire)');
 

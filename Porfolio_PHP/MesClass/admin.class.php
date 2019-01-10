@@ -25,7 +25,7 @@ class Admin{
       
 
         // Acces a la BDD
-        require_once 'connexion.php';
+        require('connexion.php');
         // requete d'insertion ds la BDD 
         $requete = $pdo->prepare('REPLACE INTO luc_admin (nom, prenom, email, telephone, linkedin, github, photo, apropos) VALUES (:nom, :prenom, :email, :telephone, :linkedin, :github, :photo, :apropos)');
 

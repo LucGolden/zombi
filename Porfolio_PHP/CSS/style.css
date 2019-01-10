@@ -1,27 +1,26 @@
 
-/* PAGE ACCEUIL */
+/*------------------------ PAGE ACCEUIL -----------------------------*/
 body{
     
     background-image: url(../img/home-office-336373_960_720.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-
-    /* background-color: #529cba; */
-
     font-family: 'Pacifico', cursive;
     font-family: 'Lobster', cursive;
     font-family: 'Kaushan Script', cursive;
     
 }
+
+/* Le nom en plus grand et rouge */
 .luc h1{
     font-size: 10em;
     color: rgb(255, 0, 0);
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 253, 253, 0.411)); 
-    /* box-shadow: 0 0 10px 5px #000;
-    border-radius: 30px 0; */
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 253, 253, 0.342)); 
+   
 }
 
+/* Le lien retour à la page d'acceuil */
 .home{
     color: rgb(250, 248, 248);
     font-size: 50px;
@@ -33,16 +32,16 @@ body{
 .luc p{
     font-size: 3.4em;
 }
+/* pour mettre en rouge quelque mot */
 .luc span{
     color: rgb(255, 0, 0);
     font-size: 1em;
 }
+
+
 span{
     font-size: 25px;
     
-}
-.luc span:hover{
-    border-radius: 0 30px;
 }
 
 
@@ -51,6 +50,7 @@ a{
     color: white;
 }
 
+/* effet de zoom sur les liens au passage de la souris */
 .bgcLien p a:hover{
     transform: scale(1.5);
     transition: .5s cubic-bezier(0, 3, .4, 1);
@@ -180,7 +180,7 @@ a{
 }
 /* -------------------------------------------- */
 
-/* -----------STYLE CSS ----------------- */
+/* -----------Effet CSS ----------------- */
 .style{
     border-radius: 10px;
     box-shadow: 0 0 10px 10px #000;
@@ -195,6 +195,12 @@ a{
     border-radius: 10px;
     box-shadow: 0 0 10px 10px #000;
 }
+
+
+/* -------------------------------- */
+
+
+/* -------------------------------- */
 
 
 /* -------------- Footer ------------------- */

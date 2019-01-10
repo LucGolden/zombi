@@ -12,12 +12,13 @@
 
 
   <div class="row">
-  <div class="col-12 m-4 text-center " >
+  <div class="col-12 m-4 text-center">
     <h1 class="text-center">COMPETENCES</h1>
   </div></div>
     <div class="row mt-5">
       <div class="col-4 text-center">
-          <i class="fab fa-html5 icon"></i><br><span>HTML 5</span> 
+          <i class="fab fa-html5 icon"></i><br><span>HTML 5</span>
+         <!-- <img src="img/visuel-sabri.jpg" alt="HTML">-->
       </div>
       <div class="col-4 text-center mb-">
          <i class="fab fa-css3 icon"></i><br><span>CSS 3</span> 

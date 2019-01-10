@@ -5,22 +5,28 @@
     <h2>Loisirs</h2>
   </div>
   </div>
-<div class="row mt-5 offset-1">
-  
-  
-  <div class="col-3 text-center mt-3 text-white">
 
-<i class="far fa-futbol iconL"></i><br><span>FOOTBALL</span> 
+<div class="row mt-4 offset-3">
+  
+  
+  <div class="col-2 text-center mr-4 text-white">
+
+<i class="far fa-futbol iconL "></i><br><span>FOOTBALL</span> 
 
 </div>
-  <div class="col-4 text-center mt-3 text-white">
+  <div class="col-2 text-center mb-5 text-white">
 <i class="fas fa-gamepad iconL"></i><br> <span>JEUX VIDEO</span>
 
 
 </div>
-  <div class="col-4 text-center mt-5 text-white">
+  <div class="col-2 text-center mb-5 text-white">
 
-  <i class="fas fa-film iconL"></i><br><span>SERIES, FILMS & Musique</span>
+  <i class="fas fa-film iconL"></i><br><span>SERIES & FILMS</span>
+
+</div>
+  <div class="col-2 text-center text-white">
+
+  <i class="fas fa-music iconL"></i><br><span>Musique</span>
 
 </div>
 </div>

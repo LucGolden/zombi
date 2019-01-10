@@ -15,10 +15,10 @@ class Contact{
         $this->prenom = strip_tags($prenom);
         $this->email = strip_tags($email);
         $this->message = strip_tags($message);
-        // $this->date = strip_tags($date);
+    
 
         // Acces a la BDD
-        require_once 'connexion.php';
+        require('connexion.php');
         // requete d'insertion ds la BDD 
         $requete = $pdo->prepare('INSERT INTO contacts (nom, prenom, email, message, date) VALUES (:nom, :prenom, :email, :message, NOW()) ');
 
@@ -28,7 +28,7 @@ class Contact{
             ':prenom' => $this->prenom,
             ':email' => $this->email,
             ':message' => $this->message
-            // ':date' => $this->date
+        
         ]);
 
         $requete->closeCursor();
