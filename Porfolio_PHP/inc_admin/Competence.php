@@ -78,7 +78,7 @@ if(!empty($_POST)){
 <div class="container">
     <div class="row">
 
-     <div class="col-12 m-5 p-5 text-center text-white">
+     <div class="col-12 m-xl-5 mt-5 p-xl-5 text-center text-white">
             <h2>Ajouter une compétence</h2>
             <div class="bg-success rounded"><?php  echo $messageVal;  ?></div>
             <form method="POST">
@@ -92,7 +92,7 @@ if(!empty($_POST)){
                     <input type="text" class="form-control mb-5 mt-5" id="icone" name="icone" aria-describedby="emailHelp"
                         placeholder="Icone">
                 </div>
-                <button type="submit" class="btn btn-danger btn-block">Ajouter</button>
+                <button type="submit" class="btn btn-danger btn-block mb-5">Ajouter</button>
             </form>
         </div>
     </div>

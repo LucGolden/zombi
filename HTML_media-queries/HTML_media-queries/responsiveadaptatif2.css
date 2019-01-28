@@ -1,0 +1,180 @@
+.container{
+	width: 80%;
+	margin: 0 auto;
+	background: white;
+	border: 0.3vh solid;
+}
+header{
+	height: 6vh;
+	background: blue;
+	padding: 1vh;
+	}
+nav{
+	height: 3vh;
+	background: red;
+	text-align: center;
+	font-size: 2vw;
+	color: #fff;
+	}/*NAV A cible les liens du menu - ils n'ont pas de taille donc ils occupent la place de leur contenu*/
+nav a:hover{
+	background: #73CEC8;
+	text-decoration: none;/*efface le standard W3C*/
+	padding: 0.5% 0.8;
+}/*change background au survol de la souris*/
+.m1, .m2, .m3, .m4{
+	height: 20vh;
+	width: 38%;
+	padding: 5%;
+	margin: 1%;
+	float: left;
+	}
+.m1{
+	background: orange;
+	}
+.m2{
+	background: green;
+	}
+.m3{
+	background: yellow;
+	}
+.m4{
+	background: pink;	
+	}
+footer{
+	height: 6vh;
+	background: blue;
+	}
+
+@media (max-width: 500px){
+	header{
+		height: 6vh;
+		background: #8E3557;
+		}
+	nav{
+		height: 3vh;
+		background: #046380;
+		}
+	.m1, .m2, .m3, .m4{
+		height: 20vh;
+		width: 86%;
+		margin: 0 auto;
+		}
+	.m1{
+		background: #B4AF91;
+		}
+	.m2{
+		background: #046380;
+		}
+	.m3{
+		background: #F6E497;
+		}
+	.m4{
+		background: #B5E655;
+		}
+	footer{
+		height: 6vh;
+		background: #8E3557;
+		}
+}
+	
+@media (min-width: 768px){
+	header{
+		height: 7vh;
+		background: #8E3557;
+		}
+	nav{
+		height: 3.5vh;
+		background: #046380;
+		}
+	.m1, .m2, .m3, .m4{
+		height: 20vh;
+		float: left;
+		}
+	.m1{
+		background: #B4AF91;
+		}
+	.m2{
+		background: #046380;
+		}
+	.m3{
+		background: #F6E497;
+		}
+	.m4{
+		background: #B5E655;
+		}
+	footer{
+		height: 7vh;
+		background: #8E3557;
+		}
+}
+
+@media (min-width: 992px){
+	header{
+		height: 8vh;
+		background: #96CA2D;
+		}
+	nav{
+		height: 4vh;
+		background: #FF358B;
+		}
+	.m1, .m2, .m3, .m4{
+		height: 30vh;
+		float: left;
+		}
+	.m1{
+		background: url(image.jpg);
+		background-size: cover;
+		}
+	.m2{
+		background: #79F4AE;
+		}
+	.m3{
+		background: #A4408D;
+		}
+	.m4{
+		background: #F479D8;
+		}
+	footer{
+		height: 8vh;
+		background: #96CA2D;
+		}
+}
+
+@media (min-width: 1200px){
+	header{
+		height: 9vh;
+		background: #8E3557;
+		}
+	nav{
+		height: 4.5vh;
+		background: #4A1A2C;
+		}
+	.m1, .m2, .m3, .m4{
+		height: 40vh;
+		float: left;
+		}
+	.m1{
+		background: linear-gradient(to left, #40a497, #6840a4);
+		}
+	.m2{
+		background: #73ADCE;
+		}
+	.m3{
+		background: #8CD0E9;
+		}
+	.m4{
+		background: linear-gradient(to left, #6840a4, #40a497);
+		}
+	footer{
+		height: 9vh;
+		background: #8E3557;
+		}
+}
+
+section{
+	margin: 1.5vh;
+}
+
+.clear{
+	clear: both;
+}

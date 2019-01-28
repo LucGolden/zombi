@@ -80,7 +80,7 @@ if(!empty($_POST)){
 
     <div class="row text-white text-center">
 
-        <div class="col-12 m-5">
+        <div class="col-12 m-xl-5">
             <h2>Ajouter une formation</h2>
             <form method="POST" class="p-4">
                 <div class="text-success"><?php echo $messageVal;  ?></div>

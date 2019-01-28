@@ -73,12 +73,12 @@ while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
 <body id="bodyContact">
 
 <nav class="navbar mt-3 contact effet">
-  <a class="btn navbar-brand ml-5  border-success  rounded-circle effetB" href="index.php"><i class="fas fa-home home"></i></a>
-  <a class="btn border-warning mr-5" href="?lien=formations">Formations</a>
-  <a class="btn border-danger mr-5" href="?lien=competences">Compétences</a>
-  <a class="btn border-info mr-5" href="?lien=realisations">Réalisations</a>
-  <a class="btn border-primary mr-5" href="?lien=luc">A Propos</a>
-  <a class="btn border-success bg-success mr-5" href="?lien=contact">Contacts</a>
+  <a class="btn navbar-brand  border-success  rounded-circle effetB" href="index.php"><i class="fas fa-home home"></i></a>
+  <a class="btn border-warning" href="?lien=formations">Formations</a>
+  <a class="btn border-danger" href="?lien=competences">Compétences</a>
+  <a class="btn border-info" href="?lien=realisations">Réalisations</a>
+  <a class="btn border-primary" href="?lien=luc">A Propos</a>
+  <a class="btn border-success bg-success" href="?lien=contact">Contacts</a>
 </nav>
 
 <div class="container mx-auto stylef effetA contacts mt-5">
@@ -91,7 +91,7 @@ while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
 </div>
 
  <div class="row mt-3">
-     <div class="col-6">
+     <div class="col-xl-6">
          <div class="text-white bg-success text-center rounded"><?php  echo $messageValid;  ?></div>
          <form action="" method="POST" id="form">
 
@@ -128,14 +128,14 @@ while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
 
 
 
-            <div class="col-5 offset-1 text-white text-center contact mt-5 mb-5 ml-1">
+            <div class="col-xl-5  offset-xl-1 text-white text-center contact mt-5 mb-5 ml-xl-1">
               <h3 class="mt-5">Vous pouvez me contacter</h3>
 
-                <p class="p-3"><i class="fas fa-mobile-alt "></i> : <?php echo $telephone;  ?></p>
-                <p class="p-2"><i class="fas fa-envelope "></i> : <?php  echo $email;  ?></p>
-                <p class="p-2"> <a href="<?php echo $linkedin;  ?>" target="_blank"><i class="fab fa-linkedin "></i> : Luc Merlentz Joinvil</a> </p>
+                <p class="p-xl-3"><i class="fas fa-mobile-alt "></i> <br><?php echo $telephone;  ?></p>
+                <p class=""><i class="fas fa-envelope "></i> <br><?php  echo $email;  ?></p>
+                <p class="p-xl-2"> <a href="<?php echo $linkedin;  ?>" target="_blank"><i class="fab fa-linkedin "></i><br> Luc Merlentz Joinvil</a> </p>
 
-                <p class="p-2"><i class="fab fa-github"></i> : <?php  echo $github;  ?></p>
+                <p class="p-xl-2"><i class="fab fa-github"></i> <br><?php  echo $github;  ?></p>
             </div>
         </div>
 

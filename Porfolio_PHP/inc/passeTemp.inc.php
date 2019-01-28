@@ -6,25 +6,25 @@
   </div>
   </div>
 
-<div class="row mt-4 offset-3">
+<div class="row mt-4 offset-xl-3">
   
   
-  <div class="col-2 text-center mr-4 text-white">
+  <div class="col-xl-2 text-center mr-4 mb-5 text-white">
 
-<i class="far fa-futbol iconL "></i><br><span>FOOTBALL</span> 
+<i class="far fa-futbol iconL"></i><br><span>FOOTBALL</span> 
 
 </div>
-  <div class="col-2 text-center mb-5 text-white">
+  <div class="col-xl-2 text-center  mb-5 text-white">
 <i class="fas fa-gamepad iconL"></i><br> <span>JEUX VIDEO</span>
 
 
 </div>
-  <div class="col-2 text-center mb-5 text-white">
+  <div class="col-xl-2 text-center mb-5 text-white">
 
   <i class="fas fa-film iconL"></i><br><span>SERIES & FILMS</span>
 
 </div>
-  <div class="col-2 text-center text-white">
+  <div class="col-xl-2 text-center text-white">
 
   <i class="fas fa-music iconL"></i><br><span>Musique</span>
 

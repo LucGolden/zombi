@@ -59,17 +59,17 @@ while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
             <div class="container text-white text-center">
 
                 <div class="row luc text-center mt-5">
-                    <div class="col-12">
-                    <h1 id="h1" class="rounded">Bonjour <?php echo $nom;  ?>.</h1>
+                    <div class="col-xl-12 col-sm-6">
+                    <h1 id="h1" class="rounded"><?php echo $prenom;  ?>.</h1>
                     <br>
-                    <p class="offset-4">Bienvenue sur ta page <span>Admin</span> </p>
+                    <p class="offset-xl-4">Bienvenue sur ta page <span>Admin</span> </p>
                 </div>
                 </div>
             </div>
 
 
                    <div class="row">
-            <div class="col-2 offset-5 p-4 stylef bgcLien ">
+            <div class="col-xl-2 col-sm-4 offset-md-5 offset-sm-1 p-4 stylef bgcLien ">
                 
                 
                 <p><a class="btn btn-outline-success btn-block" href="afficheMessage.php">Voir mes messages</a></p>
