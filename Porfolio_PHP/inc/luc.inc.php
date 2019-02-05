@@ -42,9 +42,9 @@ while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
         <img src="<?php  echo $photo; ?>" alt=""  class="rounded-circle img-thumbnail  d-block effetZoom">
     </div>
     <div class="col-xl-12 text-white text-center">
-        <!--<h2><?php echo $nom . ' ' . $prenom ; ?></h2>-->
+        <h2><?php echo $prenom . ' ' . $nom ; ?></h2>
         <p class="apropo"><?php echo $apropos;  ?> </p>
-        <a  class="btn ml-xl-5 mt-xl-5" href="img/CV_Luc2.0.pdf" target="_blank" download="">
+        <a  class="btn ml-xl-5 mt-xl-5 btn-primary" href="img/CV_Luc2.0.pdf" target="_blank" download="">
                       Télécharger mon CV
                    </a>
     </div>

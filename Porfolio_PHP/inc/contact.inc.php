@@ -129,13 +129,16 @@ while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
 
 
             <div class="col-xl-5  offset-xl-1 text-white text-center contact mt-5 mb-5 ml-xl-1">
-              <h3 class="mt-5">Vous pouvez me contacter</h3>
+              <!--<h3 class="mt-5">Vous pouvez me contacter</h3>-->
 
                 <p class="p-xl-3"><i class="fas fa-mobile-alt "></i> <br><?php echo $telephone;  ?></p>
+                
                 <p class=""><i class="fas fa-envelope "></i> <br><?php  echo $email;  ?></p>
-                <p class="p-xl-2"> <a href="<?php echo $linkedin;  ?>" target="_blank"><i class="fab fa-linkedin "></i><br> Luc Merlentz Joinvil</a> </p>
 
-                <p class="p-xl-2"><i class="fab fa-github"></i> <br><?php  echo $github;  ?></p>
+                <p class="p-xl-2"> <a href="<?php echo $linkedin;  ?>" target="_blank"><i class="fab fa-linkedin "></i><br> Luc Merlentz Joinvil</a> </p>
+                
+                <p class="p-xl-2"> <a href="<?php echo $github;  ?>" target="_blank"><i class="fab fa-github "></i><br> LucGolden</a> </p>
+                
             </div>
         </div>
 

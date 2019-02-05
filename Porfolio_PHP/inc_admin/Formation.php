@@ -66,7 +66,7 @@ if(!empty($_POST)){
 </head>
 <body>
     <nav class="navbar mt-3 effet">
-  <a class="btn navbar-brand ml-5  border-warning rounded-circle" href="index.php"><i class="fas fa-home home"></i></a>
+  <a class="btn navbar-brand ml-5  border-warning rounded-circle" href="index.php"><i class="fas fa-power-off home"></i></a>
   <!-- <a class="btn border-success bg-success mr-5" href="afficheMessage.php">Messages</a> -->
   <a class="btn bg-warning mr-5" href="admin.php"><i class="fas fa-arrow-circle-left"></i>Retour</a>
 

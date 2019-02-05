@@ -28,18 +28,23 @@
          <i class="fab fa-css3 icon mt-xl-5 mt-3"></i><br><span>CSS 3</span> 
       </div>
       <div class="col-xl-4 col-md-4 col-4 text-center">
+          
+
+        <i class="fas fa-bold icon mt-xl-5 mt-3"></i><br><span>BOOTSTRAP</span> 
+      </div>
+      <div class="col-xl-4 col-md-4 col-4 text-center">
   
 
         <i class="fab fa-php icon mt-xl-5 mt-3"></i><br><span>PHP</span> 
       </div>
-      <div class="col-xl-4 col-md-4 col-4 text-center">
-          
-
-        <i class="fas fa-bold icon mt-xl-5 mt-3"></i></i><br><span>BOOTSTRAP</span> 
-      </div>
                   <div class="col-xl-4 col-md-4 col-4 text-center">
 
                      <i class="fab fa-js icon mt-xl-5 mt-3"></i><br><span>JAVASCRIPT</span> 
+                  </div>
+      
+                  <div class="col-xl-4 col-md-4 col-4 text-center">
+
+                    <i class="fab fa-wordpress icon mt-3 mt-xl-5"></i><br><span>Wordpress</span> 
                   </div>
       
     </div>

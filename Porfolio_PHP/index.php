@@ -34,10 +34,7 @@ while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
     <!-- Lien CSS perso -->
     <link rel="stylesheet" href="CSS/Style.css">
 
-    <!-- Lien police -->
- <!--<link href="https://fonts.googleapis.com/css?family=Lobster|Pacifico" rel="stylesheet">  -->
- <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Lobster|Pacifico" rel="stylesheet"> 
- 
+    
 </head>
 <body>
     
@@ -52,9 +49,9 @@ while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
             <div class="row">
                 <div class="col-md-12 col-xl-6 col-sm-12 offset-xl-1  text-white mt-5 luc ">
                     <p class="offset-2">Je suis</p>
-                    <h1 class="text-center rounded-circle" id="h1"><?php echo $prenom;?><a href="connexionAdmin.php"><i class="fab fa-medium petit"></i></i></a> <?php echo $nom;  ?></h1>
-                    <p class="ml-xl-5 offset-md-1"><b>développeur intégrateur<span> junior</span></b></p>
-                    <p class="offset-xl-2 offset-md-1" id="typeText">& c'est le <span>site</span> de mon <span>PORTFOLIO</span></p>
+                    <h1 class="text-center rounded-circle" id="h1"><?php echo $prenom;?><a href="connexionAdmin.php"><i class="fab fa-medium petit"></i></a> <?php echo $nom;  ?></h1>
+                    <p class="ml-xl-5 offset-md-1"><b>développeur<span>/</span>intégrateur<span> junior</span></b></p>
+                    <p class="offset-xl-2 offset-md-1" id="typeText">& c'est le <span>site</span> de mon <span>PORTFOLIO.</span></p>
                 </div>
             </div>
         </div>
@@ -66,7 +63,7 @@ while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
         <!--               -->
         <!-- </section> -->
         <div class="row">
-            <div class="col-xl-2 offset-xl-8 p-xl-4 mt-xl-3 col-md-4 offset-md-4 p-md-3 col-6 offset-3 p-2 stylef bgcLien mt-5">
+            <div class="col-xl-2 offset-xl-6 p-xl-4 mt-xl-3 col-md-4 offset-md-4 p-md-3 col-6 offset-3 p-2 stylef bgcLien mt-5">
                 
                 
                 <p><a class="btn btn-outline-warning btn-block" href="?lien=formations">Formations</a></p>
@@ -78,7 +75,7 @@ while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
                 
             </div>
         </div>
-    </div>
+    
     
     
     
@@ -100,7 +97,7 @@ while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
          <p class="text-center text-white"><span>Luc M. Joinvil développeur intégrateur junior</span></p>
         </footer>
     </div>
-    </div>
+    
     
 
    <script

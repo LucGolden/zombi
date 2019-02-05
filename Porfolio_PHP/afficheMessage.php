@@ -7,14 +7,14 @@
 
       
        
-if (isset($_GET['action']) && $_GET['action'] == 'suppression' && isset( $_GET['id_contact'])){ //si exxiste l'indice "action" ds $_GET et que sa valeur est "seppression" et que existe aussi l'indice "id_produit", alors je peux traiter la suppression demandé
+if (isset($_GET['action']) && $_GET['action'] == 'suppression' && isset( $_GET['id_contact'])){ //si exxiste l'indice "action" ds $_GET et que sa valeur est "seppression" et que existe aussi l'indice "id_contact", alors je peux traiter la suppression demandé
 
     $resultat = $pdo->prepare("DELETE FROM contacts WHERE id_contact = :id_contact");
 
     $resultat->execute([':id_contact' => $_GET['id_contact']]);
     
 
-    if ($resultat->rowCount() == 1){ // si le DELETE retourne 1 ligne, c'est que l'id_produit existait et qu'il a pu être supprimé :
+    if ($resultat->rowCount() == 1){ // si le DELETE retourne 1 ligne, c'est que l'id_contact existait et qu'il a pu être supprimé :
         $contenu .= '<div class="alert alert-success mt-1">Le message N° ' .  $_GET['id_contact']. ' a bien été supprimé.</div>' ;
 
     }else{
@@ -27,7 +27,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression' && isset( $_GET['
         $affichage .= '<h3 class="alert alert-dark mt-1">Nombre de Message(s) : ' . $requete->rowCount() . '</h3>' ;
 
 
-$requete2 = $pdo->query('SELECT * FROM contacts  ORDER BY id_contact DESC LIMIT 6 ');
+$requete2 = $pdo->query('SELECT * FROM contacts  ORDER BY id_contact DESC LIMIT 9 ');
         
 while ($info_contact = $requete2->fetch(PDO::FETCH_ASSOC)){
     // echo '<pre class="text-white">';
@@ -84,7 +84,7 @@ $affichage2 .= '</div>';
 </head>
 <body>
 <nav class="navbar mt-3 effet">
-  <a class="btn navbar-brand ml-5 rounded-circle" href="index.php"><i class="fas fa-home home"></i></a>
+  <a class="btn navbar-brand ml-5 rounded-circle" href="index.php"><i class="fas fa-power-off home"></i></a>
   <a class="btn border-success bg-success mr-5" href="admin.php"><i class="fas fa-arrow-circle-left"></i>Retour</a>
 
  

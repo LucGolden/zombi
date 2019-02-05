@@ -8,7 +8,7 @@
         // $requete = $pdo->query('SELECT * FROM contacts');
         
         
-        $requete = $pdo->query('SELECT * FROM realisations ORDER BY id_realisations DESC LIMIT 6 ');
+        $requete = $pdo->query('SELECT * FROM realisations ORDER BY id_realisations DESC LIMIT 9 ');
         // $affichage .= '<h3 class="alert alert-dark mt-1">Nombre de realisations : ' . $requete->rowCount() . '</h3>' ;
 
 while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
@@ -18,7 +18,7 @@ while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
     
     extract($info_realisations);
    
-    $affichage.=' <div class="col-md-4 m-md-2 col-xl-3 col-5   index">';
+    $affichage.=' <div class="col-md-4 m-md-1 col-xl-3 col-5  mb-xl-4 index">';
     $affichage.='<div class="card style">';
     $affichage.='<a href="'. $image . '" target="_blank"><img class="card-img-top mx-auto responsive_image" src="'. $image . '" alt="Card image cap"></a>';
     $affichage.='<div class="card-body">';
@@ -46,7 +46,7 @@ while ($info_realisations = $requete->fetch(PDO::FETCH_ASSOC)){
   <a class="btn border-success" href="?lien=contact">Contacts</a>
 </nav>
 
-<div class="container-fluid  creations" id="jqueryEffet">
+<div class="container creations" id="jqueryEffet">
   <h1 class="text-center mb-5 h1">Mes Réalisations</h1>
 
   <div class="row margin-r offset-xl-1">
